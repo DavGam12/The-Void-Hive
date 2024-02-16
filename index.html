@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="DavGam">
+    <title>The Void Hive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--Matter, Heat-Cool, Elemental Matter, Antimatter, Void Eseence, Dark Matter-->
+
+<body>
+
+    <div class="tabs">
+        <button id="CrustDrillTab" onclick="VisibilityCD()">Crust Drill</button>
+        <button id="CrustUpgradesTab" onclick="VisibilityCU()">Upgrades</button>
+        <button id="AchievementsTab" onclick="VisibilityAch()">Achievement</button>
+        <button id="HeatCoolTab" onclick="VisibilityHC()">Heat-Cool</button>
+    </div>
+
+    <div class="general">
+
+        <div class="units">
+            <span id="unitTextMt">Matter: 1 Mt</span>
+            <span id="unitTextCP">Crust Pieces: 0.0 CP</span>
+            <span id="unitTextCS">Crust Shards: 0.0 CS</span>
+        </div>
+
+        <div class="main">
+
+            <div class="generators">
+                <div class="crustDrill" id="crustDrill">
+                    <h3>Crust Drill</h3>
+                    <div class="pieces">
+                        <span class="piecesText">Crust Pieces</span>
+                        <button id="CPGen" onclick="BuyGenCP()">
+                            Buy Piece Generator
+                            <p id="CPGenPrice">1 CP</p>
+                        </button>
+
+                        <button id="crustUpgradeCP1" onclick="CUCP1()">CP/Gen*2.5<p>10CP</p></button>
+                        <button id="crustUpgradeCP2" onclick="CUCP2()">CP/Gen*5<p>100CP</p></button>
+
+                        <button id="convertToMt" onclick="MtConvertion()">
+                            Convert to Matter
+                            <p id="convertToMtUnitText">0.0 Mt</p>
+                        </button>
+                    </div>
+                    <div class="shards">
+                        <span class="shardsText">Crust Shards</span>
+                        <button id="CSGen" onclick="BuyGenCS()">
+                            Buy Shard Generator
+                            <p id="CSGenPrice">1.0 Mt</p>
+                        </button>
+                        
+                        <button id="crustUpgradeCS1" onclick="CUCS1()">CS/Gen*2.5<p>10CS</p></button>
+                        <button id="crustUpgradeCS2" onclick="CUCS2()">CS/Gen*5<p>100CS</p></button>
+
+                        <button id="convertToCP" onclick="CPConvertion()">
+                            Convert to Pieces
+                            <p id="convertToCPUnitText">0.0 CP</p>
+                        </button>
+                    </div>
+
+                    <div class="matter" id="matterUpgrades">
+                        <span class="matterText">Matter</span>
+                        <button id="MtGen" onclick="BuyGenMt()">
+                            Buy Matter Generator
+                            <p id="MtGenPrice">10 Mt</p>
+                        </button>
+
+                        <button id="crustUpgradeMt1" onclick="CUMt1()">Mt/Gen*10<p>100 Mt</p></button>
+                        <button id="crustUpgradeMt2" onclick="CUMt2()">Mt/Gen*1e3<p>1k Mt</p></button>
+
+                        <button id="MBCP1" onclick="BuyMBCP1()">Cp/Gen*1.1<p id="MBCP1PriceText">15 CP</p></button>
+                        <button id="MBMt1" onclick="BuyMBMt1()">Mt/Gen*1.1<p id="MBMt1PriceText">15 Mt</p></button>
+                        <button id="MBCS1" onclick="BuyMBCS1()">CS/Gen*1.1<p id="MBCS1PriceText">15 CS</p></button>
+                    </div>
+
+                    <button id="unlockableHeat" onclick="HeatUnlock()">Heat<p>1M Mt</p></button>
+                    <button id="unlockableCool" onclick="CoolUnlock()">Cool<p>1M Mt</p></button>
+                    
+                </div>
+
+            </div>
+
+            <div class="Achievements" id="Achievements">
+                <h3>Achievements</h3>
+                
+                <div id="AchCS1"><span>10CP</span></div>
+                <div id="AchCS2"><span>10Mt</span></div>
+
+                <div id="AchCP1"><span>CS1^2</span></div>
+                <div id="ArhCP2"><span>CS2^2</span></div>
+            </div>
+
+            <div class="generalUpgrades" id="generalUpgrades">
+                <h3>Upgrades</h3>
+                <div class="automation">
+                    <h4>Automation</h4>
+                    <button class="autoButton">First</button>
+                    <button class="autoButton">Second</button>
+                    <button class="autoButton">Third</button>
+                </div>
+            </div>
+
+            <div class="Heat-Cool" id="Heat-Cool">
+                <h3>Heat-Cool</h3>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

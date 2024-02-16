@@ -1,0 +1,211 @@
+body{
+    background-color: black;
+}
+
+.tabs{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+
+    border: solid black;
+
+    background-color: aliceblue;
+}
+#CrustDrillTab{margin-top: 15px;}
+.tabs button{
+    width: 80%;
+    margin: 5px 15px;
+}
+#HeatCoolTab{visibility: hidden;}
+
+.general{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 89%;    
+    
+    border: solid black;
+
+    background-color: brown;
+}
+
+.units{
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 12.5%;
+    height: 100px;
+
+    border: solid black;
+
+    background-color: aqua;
+}
+
+.main{
+    position: absolute;
+    left: 300px;
+    right: 50px;
+    top: 50px;
+    bottom: 50px;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    border: solid black;
+
+    background-color: coral;
+}
+
+.crustDrill{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.Achievements, .generalUpgrades, .Heat-Cool{
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+h3{
+    font-size: x-large;
+    color: white;
+}
+
+.pieces{
+    width: 47%;
+    position: absolute;
+    left: 10px;
+    height: 40%;
+    border: solid black;
+}
+
+.shards{
+    width: 47%;
+    position: absolute;
+    right: 10px;
+    height: 40%;
+    border: solid black;
+}
+
+.piecesText, .shardsText, .matterText{
+    font-size: larger;
+    position: relative;
+    top: 10px;
+}
+
+#CPGen, #CSGen, #MtGen{
+    border-radius: 10px;
+    position: absolute;
+    left: 230px;
+    top: 50px;
+    padding: 20px;
+}
+
+#convertToMt, #convertToCP{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#convertToMtUnitText, #convertToCPUnitText{
+    font-size: smaller;
+}
+
+#crustUpgradeCP1, #crustUpgradeCS1, #crustUpgradeMt1{
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 125px;
+    height: 125px;
+}
+
+#crustUpgradeCP2, #crustUpgradeCS2, #crustUpgradeMt2{
+    position: absolute;
+    right: 50px;
+    top: 50px;
+    width: 125px;
+    height: 125px;
+}
+
+.matter{
+    width: 47%;
+    height: 40%;
+    position: absolute;
+    bottom: 70px;
+    left: 350px;
+    
+    border: solid black;
+    visibility: hidden;
+}
+
+#MBCP1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 62.5px;
+}
+
+#MBMt1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 265px;
+}
+
+#MBCS1{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 30px;
+    right: 62.5px;
+}
+
+#unlockableHeat{
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
+    width: 150px;
+    height: 150px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid red 5px;
+    visibility: hidden;
+}
+#unlockableCool{
+    position: absolute;
+    bottom: 150px;
+    right: 100px;
+    width: 150px;
+    height: 150px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+    border: solid blue 5px;
+    visibility: hidden;
+}
