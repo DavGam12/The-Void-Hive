@@ -13,18 +13,29 @@
 <body>
 
     <div class="tabs">
+        
+        <input type="file" id="LoadInput" hidden onchange="LoadInfo(this)">
+        <button id="Save" onclick="Save()">Save</button><button id="Load" onclick="Load()">Load</button>
         <button id="CrustDrillTab" onclick="VisibilityCD()">Crust Drill</button>
-        <button id="CrustUpgradesTab" onclick="VisibilityCU()">Upgrades</button>
         <button id="AchievementsTab" onclick="VisibilityAch()">Achievement</button>
+        <button id="UpgradesTab" onclick="VisibilityUpg()">Upgrades</button>
         <button id="HeatCoolTab" onclick="VisibilityHC()">Heat-Cool</button>
+        
     </div>
 
     <div class="general">
 
-        <div class="units">
-            <span id="unitTextMt">Matter: 1 Mt</span>
+        <div class="units" id="UnitsBox">
+            <span id="unitTextMt">Matter: 1.0 Mt</span>
             <span id="unitTextCP">Crust Pieces: 0.0 CP</span>
             <span id="unitTextCS">Crust Shards: 0.0 CS</span>
+
+            <span id="HeatCoolUnits">
+                <br>
+                <span id="unitTextHtSt">Heat Stones: 0.0 HtSt</span>
+                <br>
+                <span id="unitTextClSt">Cool Stones: 0.0 ClSt</span>
+            </span>
         </div>
 
         <div class="main">
@@ -67,10 +78,10 @@
                         <span class="matterText">Matter</span>
                         <button id="MtGen" onclick="BuyGenMt()">
                             Buy Matter Generator
-                            <p id="MtGenPrice">10 Mt</p>
+                            <p id="MtGenPrice">1 Mt</p>
                         </button>
 
-                        <button id="crustUpgradeMt1" onclick="CUMt1()">Mt/Gen*10<p>100 Mt</p></button>
+                        <button id="crustUpgradeMt1" onclick="CUMt1()">Mt/Gen*10<p>10 Mt</p></button>
                         <button id="crustUpgradeMt2" onclick="CUMt2()">Mt/Gen*1e3<p>1k Mt</p></button>
 
                         <button id="MBCP1" onclick="BuyMBCP1()">Cp/Gen*1.1<p id="MBCP1PriceText">15 CP</p></button>
@@ -78,8 +89,8 @@
                         <button id="MBCS1" onclick="BuyMBCS1()">CS/Gen*1.1<p id="MBCS1PriceText">15 CS</p></button>
                     </div>
 
-                    <button id="unlockableHeat" onclick="HeatUnlock()">Heat<p>1M Mt</p></button>
-                    <button id="unlockableCool" onclick="CoolUnlock()">Cool<p>1M Mt</p></button>
+                    <button id="unlockableHeat" onclick="HeatUnlock()">Heat<p>10k Mt</p></button>
+                    <button id="unlockableCool" onclick="CoolUnlock()">Cool<p>10k Mt</p></button>
                     
                 </div>
 
@@ -87,26 +98,174 @@
 
             <div class="Achievements" id="Achievements">
                 <h3>Achievements</h3>
-                
-                <div id="AchCS1"><span>10CP</span></div>
-                <div id="AchCS2"><span>10Mt</span></div>
 
-                <div id="AchCP1"><span>CS1^2</span></div>
-                <div id="ArhCP2"><span>CS2^2</span></div>
+                <div class="Achievements-Boxes">
+                
+                    <div class="first-row">
+                        <div id="AchCS1"><span>CS #1</span></div>
+                        <div id="AchCS2"><span>CS #2</span></div>
+                        <div id="AchCS3"><span>CS #3</span></div>
+
+                        <div id="AchCP1"><span>CP #1</span></div>
+                        <div id="AchCP2"><span>CP #2</span></div>
+                        <div id="AchCP3"><span>CP #3</span></div>
+
+                        <div id="AchMt1"><span>Mt #1</span></div>
+                        <div id="AchMt2"><span>Mt #2</span></div>
+                        <div id="AchMt3"><span>Mt #3</span></div>
+                    </div>
+
+                    <div class="second-row">
+                        <div id="AchSt1"><span>St #1</span></div>
+                        <div id="AchSt2"><span>St #2</span></div>
+                        <div id="AchSt3"><span>St #3</span></div>
+
+                        <div id="AchCM1"><span>CM #1</span></div>
+                        <div id="AchCM2"><span>CM #2</span></div>
+                        <div id="AchCM3"><span>CM #3</span></div>
+
+                        <div id="AchPC1"><span>PC #1</span></div>
+                        <div id="AchPC2"><span>PC #2</span></div>
+                        <div id="AchPC3"><span>PC #3</span></div>
+                    </div>
+
+                </div>
+                <div class="Achievements-Info">
+
+
+                    <div id="MainInfo">
+                        <h3>Achievements</h3>
+                        <p>In order to see the information of an Achievement move the mouse over it</p>
+                    </div>
+
+
+                    <div id="InfoCS1">
+                        <h4>The first boost</h4>
+                        <p>To unlock this Achievement you need to reach 5 CS.</p>
+                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                    </div>
+                    <div id="InfoCS2">
+                        <h4>The more the Shards, the more the Pieces</h4>
+                        <p>To unlock this Achievement you need to reach 100 CS.</p>
+                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                    </div>
+                    <div id="InfoCS3">
+                        <h4>Want an ultra boost?</h4>
+                        <p>To unlock this Achievement you need to reach 2000 CS.</p>
+                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                    </div>
+
+                    <div id="InfoCP1">
+                        <h4>A mix of Shards</h4>
+                        <p>To unlock this Achievement you need to reach 5 CP.</p>
+                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                    </div>
+                    <div id="InfoCP2">
+                        <h4>A new Generator?</h4>
+                        <p>To unlock this Achievement you need to reach 100 CP.</p>
+                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                    </div>
+                    <div id="InfoCP3">
+                        <h4>Need more boosts?</h4>
+                        <p>To unlock this Achievement you need to reach 2000 CP.</p>
+                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                    </div>
+
+                    <div id="InfoMt1">
+                        <h4>It's a matter of Matter</h4>
+                        <p>To unlock this Achievement you need to reach 5 Mt.</p>
+                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                    </div>
+                    <div id="InfoMt2">
+                        <h4>Powerful Upgrade for a bad Generator</h4>
+                        <p>To unlock this Achievement you need to reach 100 Mt.</p>
+                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                    </div>
+                    <div id="InfoMt3">
+                        <h4>Heat and Cool, huh?</h4>
+                        <p>To unlock this Achievement you need to reach 2000 Mt.</p>
+                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                    </div>
+
+                </div>
+
             </div>
 
             <div class="generalUpgrades" id="generalUpgrades">
                 <h3>Upgrades</h3>
                 <div class="automation">
-                    <h4>Automation</h4>
-                    <button class="autoButton">First</button>
-                    <button class="autoButton">Second</button>
-                    <button class="autoButton">Third</button>
+                    <h2>Automation</h2>
+                    <button class="autoButton">100% CP</button>
+                    <button class="autoButton">100% Mt</button>
+                    <button class="autoButton">10% HtSt</button>
+                    <button class="autoButton">10% ClSt</button>
+                </div>
+                <div class="permanent">
+                    <h2>Permanent</h2>
+                    <button class="permaButton">CS Boost</button>
+                    <button class="permaButton">CP Boost</button>
+                    <button class="permaButton">Mt Boost</button>
+                    <button class="permaButton">CM Boost</button>
+                    <button class="permaButton">PC Boost</button>
                 </div>
             </div>
 
             <div class="Heat-Cool" id="Heat-Cool">
                 <h3>Heat-Cool</h3>
+                <div class="Heat">
+                    <h2>Heat</h2>
+                    <button id="ConvertToHtSt" onclick="HtStConvertion()">
+                        Merge Matter into
+                        <br><span id="ConvertToHtStUnitText">0.0</span>
+                        Heat Stones
+                    </button>
+
+                    <button id="tBBBuy" onclick="BuytBB()">
+                        Create a tiny Big Bang
+                        <p id="tBBPrice">1 HtSt</p>
+                    </button>
+
+                    <button id="HeatUpgradesButton" onclick="VisibilityHeatUpgrades()">Heat Upgrades</button>
+
+                    <div class="HeatUpgrades" id="HeatUpgrades">
+                        <h3>Heat Upgrades</h3>
+                        <button id="HeatUpgradeCM1">CM*=Mt/1e6<p>10k CM</p></button>
+                        <button id="HeatUpgradeCM2">CM*=CP/1e3<p>100k CM</p></button>
+                        <button id="HeatUpgradeCM3">CM*=1e3<p>1M CM</p></button>
+
+                        <button id="CloseHeatUpgrades"><p class="Close">Close</p></button>
+                    </div>
+                </div>
+                <div class="Cool">
+                    <h2>Cool</h2>
+                    <button id="ConvertToClSt" onclick="ClStConvertion()">
+                        Merge Matter into
+                        <br><span id="ConvertToClStUnitText">0.0</span>
+                        Cool Stones
+                    </button>
+
+                    <button id="ICBuy" onclick="BuyIC()">
+                        Create an Interestellar Cloud
+                        <p id="ICPrice">1 ClSt</p>
+                    </button>
+
+                    <button id="CoolUpgradesButton" onclick="VisibilityCoolUpgrades()">Cool Upgrades</button>
+
+                    <div class="CoolUpgrades" id="CoolUpgrades">
+                        <h3>Cool Upgrades</h3>
+                        <button id="CoolUpgradePC1">PC*=Mt/1e6<p>10k CM</p></button>
+                        <button id="CoolUpgradePC2">PC*=CM/1e3<p>100k CM</p></button>
+                        <button id="CoolUpgradePC3">PC*=1e3<p>1M CM</p></button>
+
+                        <button id="CloseCoolUpgrades"><p class="Close">Close</p></button>
+                    </div>
+                </div>
+
+                <div class="SpecifiedUnits" id="HeatCoolSpecificUnits">
+                    <p>Cosmic Microwaves: </p><span id="unitTextCM">0 CM</span>
+                    <p>Protostellar Clouds: </p><span id="unitTextPC">0 PC</span>
+                </div>
+
             </div>
 
         </div>

@@ -16,12 +16,21 @@ body{
 
     background-color: aliceblue;
 }
-#CrustDrillTab{margin-top: 15px;}
-.tabs button{
+.tabs button, input{
     width: 80%;
     margin: 5px 15px;
 }
-#HeatCoolTab{visibility: hidden;}
+#Save{
+    width: 37%;
+    position: absolute;
+}
+#Load{
+    width: 37%;
+    position: relative;
+    left: 80px;
+}
+#CrustDrillTab{margin-top: 15px;}
+#HeatCoolTab, #UpgradesTab{visibility: hidden;}
 
 .general{
     position: absolute;
@@ -29,16 +38,14 @@ body{
     top: 0;
     bottom: 0;
     width: 89%;    
-    
     border: solid black;
-
     background-color: brown;
 }
 
 .units{
     position: absolute;
     top: 40px;
-    left: 20px;
+    left: 40px;
     
     display: flex;
     flex-direction: column;
@@ -50,6 +57,30 @@ body{
     border: solid black;
 
     background-color: aqua;
+}
+.SpecifiedUnits #Heat-Cool{
+    
+    position: absolute;
+    top: 400px;
+    left: 40px;
+        
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 12.5%;
+    height: 150px;
+    
+    border: solid black;
+    
+    background-color: palevioletred;
+    visibility: hidden;
+    
+}
+
+#HeatCoolUnits{
+    position: absolute;
+    visibility: hidden;
 }
 
 .main{
@@ -66,6 +97,7 @@ body{
     border: solid black;
 
     background-color: coral;
+    
 }
 
 .crustDrill{
@@ -208,4 +240,194 @@ h3{
     border-radius: 10px;
     border: solid blue 5px;
     visibility: hidden;
+}
+
+.Achievements-Boxes .first-row, .Achievements-Boxes .second-row{
+    position: absolute;
+    display: flex;   
+    flex-direction: row;
+    cursor: default;
+}
+.Achievements-Boxes h3{
+    position: absolute;
+    top: 0;
+    left: 600px;
+}
+.Achievements-Boxes div span{
+    position: relative;
+    top: 25px;
+}
+.Achievements-Info{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    left: -283px;
+    bottom: 0;
+    background-color: yellowgreen;
+}
+.Achievements-Info h3, .Achievements-Info p{
+    position: relative;
+    bottom: 15px;
+}
+.Achievements-Info div{
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    background-color: yellowgreen;
+    visibility: hidden;
+}
+#MainInfo{
+    visibility: inherit;
+}
+.Achievements-Boxes .first-row div{
+    width: 75px;
+    height: 75px;
+    position: relative;
+    top: 100px;
+    left: 300px;
+
+    font-size: larger;
+    background-color: rgb(255, 103, 103);
+    align-items: center;
+    border: solid grey;
+}
+.Achievements-Boxes .second-row div{
+    width: 75px;
+    height: 75px;
+    position: relative;
+    top: 180px;
+    left: 300px;
+
+    font-size: larger;
+    background-color: rgb(255, 103, 103);
+    align-items: center;
+    border: solid grey;
+}
+.automation{
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    border: solid;
+}
+.autoButton{
+    width: 100px;
+    height: 100px;
+    font-size: medium;
+    border-radius: 20px;
+    margin: 10px 10px;
+}
+.autoButton:hover{
+    background-color: grey;
+}
+
+.permanent{
+    position: absolute;
+    width: 40%;
+    height: 50%;
+    right: 0;
+    border: solid;
+}
+.permaButton{
+    width: 75px;
+    height: 75px;
+    font-size: medium;
+    border-radius: 20px;
+    margin: 20px 5px;
+}
+.permaButton:hover{
+    background-color: goldenrod;
+}
+
+#HeatCoolSpecificUnits{
+    position: absolute;
+    
+    width: 250px;
+    height: 150px;
+    left: -283px;
+    bottom: 400px;
+    background-color: palevioletred;
+}
+
+.Heat{
+    position: absolute;
+    width: 45%;
+    height: 90.5%;
+
+    border: solid;
+}
+.Cool{
+    position: absolute;
+    width: 45%;
+    height: 90.5%;
+    right: 0;
+    border: solid;
+    
+}
+#ConvertToHtSt, #ConvertToClSt{
+    position: absolute;
+    left: 35%;
+    padding: 30px;
+    font-size: medium;
+    border-radius: 10px;
+}
+#tBBBuy, #ICBuy{
+    position: relative;
+    top: 150px;
+    left: 5px;
+    padding: 30px;
+    border-radius: 10px;
+}
+#HeatUpgradesButton, #CoolUpgradesButton{
+    position: absolute;
+    top: 450px;
+    padding: 50px;
+    left: 200px;
+    font-size: medium;
+    border-radius: 10px;
+    background-color: burlywood;
+}
+.HeatUpgrades{
+    position: fixed;
+    position: absolute;
+    top: 20px;
+    bottom: 80px;
+    left: 155px;
+    right: -585px;
+    background-color: rosybrown;
+    border: solid;
+    z-index: 1;
+    visibility: hidden;
+}
+.CoolUpgrades{
+    position: fixed;
+    position: absolute;
+    top: 20px;
+    bottom: 80px;
+    left: -585px;
+    right: 155px;
+    background-color: rosybrown;
+    border: solid;
+    z-index: 1;
+    visibility: hidden;
+}
+.HeatUpgrades button, .CoolUpgrades button{
+    border-radius: 10px;
+    padding: 30px;
+    margin: 10px 15px;
+    width: 150px;
+    height: 110px;
+}
+#CloseHeatUpgrades{
+    border-radius: 0;
+    padding: 20px;
+    width: 100px;
+    height: 20px;
+    position: absolute;
+    left: 450px;
+    bottom: 0;
+}
+.Close{
+    position: absolute;
+    left: 30px;
+    top: 0;
 }
