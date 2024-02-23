@@ -59,11 +59,9 @@ body{
     background-color: #3bbff6;
 }
 .SpecifiedUnits #Heat-Cool{
-    
     position: absolute;
     top: 400px;
     left: 40px;
-        
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -115,6 +113,9 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
+}
+.Heat-Cool{
+    background: linear-gradient(to right, rgb(255, 60, 0), rgb(0, 140, 255));
 }
 
 h3{
@@ -376,6 +377,9 @@ h3{
     border-radius: 20px;
     margin: 20px 5px;
 }
+.boostButton :hover{
+    background-color: goldenrod;
+}
 
 #HeatCoolSpecificUnits{
     position: absolute;
@@ -421,7 +425,7 @@ h3{
     left: 200px;
     font-size: medium;
     border-radius: 10px;
-    background-color: #250E56;
+    background-color: #20C9AC;
 }
 .HeatUpgrades{
     position: fixed;
@@ -430,7 +434,7 @@ h3{
     bottom: 80px;
     left: 155px;
     right: -585px;
-    background-color: rosybrown;
+    background-color: #C4203B;
     border: solid;
     z-index: 1;
     visibility: hidden;
@@ -442,7 +446,7 @@ h3{
     bottom: 80px;
     left: -585px;
     right: 155px;
-    background-color: rosybrown;
+    background-color: #4268BD;
     border: solid;
     z-index: 1;
     visibility: hidden;
@@ -460,6 +464,14 @@ h3{
 .HeatUpgrades .third-row, .CoolUpgrades .third-row{
     position: relative;
     top: 100px;
+}
+
+#HeatUpgradeCM12, #CoolUpgradePC12{
+    border: solid black;
+    width: 130px;
+    height: 120px;
+    font-size: medium;
+    background-color: rgb(47, 255, 127);
 }
 
 .HeatUpgradesInfo, .CoolUpgradesInfo{

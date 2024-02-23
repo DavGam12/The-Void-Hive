@@ -1,4 +1,4 @@
-window.setInterval(MainLoop, 50) // Increment/sec
+window.setInterval(MainLoop, 100) // Increment/sec
 
 /*
     Abbreviations->{
@@ -262,7 +262,7 @@ let Unlocked = [
     false, // Heat
     false, // Cool
     // Buttons
-    false, // Matetr Upgrades
+    false, // Matter Upgrades
     false, // Heat-Cool
     // Tabs
     false // Heat-Cool Tab ([0] && [1])
@@ -428,14 +428,14 @@ function VisibilityCoolUpgrades(){
 // Unlocks
 // Features
 function HeatUnlock() {
-    let UnlockPrice = 1e3
+    let UnlockPrice = 1e4
     if (Mt>=UnlockPrice && !Unlocked[0]) {
         Mt -= UnlockPrice
         Unlocked[0] = true
     }
 }
 function CoolUnlock(){
-    let UnlockPrice = 1e3
+    let UnlockPrice = 1e4
     if (Mt>=UnlockPrice && !Unlocked[1]) {
         Mt -= UnlockPrice
         Unlocked[1] = true
@@ -1232,7 +1232,7 @@ function CloseCoolUpgrades(){
 // Increment
 let LoopCountNum = 0
 function MainLoop(){
-    if (LoopCountNum != 0 && LoopCountNum % 20 === 0){
+    if (LoopCountNum != 0 && LoopCountNum % 10 === 0){
         Increment()
         LoopCountNum = 0
     } else {LoopCountNum++}
