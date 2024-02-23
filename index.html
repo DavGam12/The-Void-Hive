@@ -50,8 +50,8 @@
                             <p id="CPGenPrice">1 CP</p>
                         </button>
 
-                        <button id="crustUpgradeCP1" onclick="CUCP1()">CP/Gen*2.5<p>10CP</p></button>
-                        <button id="crustUpgradeCP2" onclick="CUCP2()">CP/Gen*5<p>100CP</p></button>
+                        <button id="crustUpgradeCP1" onclick="CUCP1()">CP-CU #1<p>10 CP</p></button>
+                        <button id="crustUpgradeCP2" onclick="CUCP2()">CP-CU #2<p>100 CP</p></button>
 
                         <button id="convertToMt" onclick="MtConvertion()">
                             Convert to Matter
@@ -65,8 +65,8 @@
                             <p id="CSGenPrice">1.0 Mt</p>
                         </button>
                         
-                        <button id="crustUpgradeCS1" onclick="CUCS1()">CS/Gen*2.5<p>10CS</p></button>
-                        <button id="crustUpgradeCS2" onclick="CUCS2()">CS/Gen*5<p>100CS</p></button>
+                        <button id="crustUpgradeCS1" onclick="CUCS1()">CS-CU #1<p>10 CS</p></button>
+                        <button id="crustUpgradeCS2" onclick="CUCS2()">CS-CU #2<p>100 CS</p></button>
 
                         <button id="convertToCP" onclick="CPConvertion()">
                             Convert to Pieces
@@ -81,10 +81,10 @@
                             <p id="MtGenPrice">1 Mt</p>
                         </button>
 
-                        <button id="crustUpgradeMt1" onclick="CUMt1()">Mt/Gen*10<p>10 Mt</p></button>
-                        <button id="crustUpgradeMt2" onclick="CUMt2()">Mt/Gen*1e3<p>1k Mt</p></button>
+                        <button id="crustUpgradeMt1" onclick="CUMt1()">Mt-CU #1<p>10 Mt</p></button>
+                        <button id="crustUpgradeMt2" onclick="CUMt2()">Mt-CU #2<p>100 Mt</p></button>
 
-                        <button id="MBCP1" onclick="BuyMBCP1()">Cp/Gen*1.1<p id="MBCP1PriceText">15 CP</p></button>
+                        <button id="MBCP1" onclick="BuyMBCP1()">CP/Gen*1.1<p id="MBCP1PriceText">15 CP</p></button>
                         <button id="MBMt1" onclick="BuyMBMt1()">Mt/Gen*1.1<p id="MBMt1PriceText">15 Mt</p></button>
                         <button id="MBCS1" onclick="BuyMBCS1()">CS/Gen*1.1<p id="MBCS1PriceText">15 CS</p></button>
                     </div>
@@ -92,6 +92,61 @@
                     <button id="unlockableHeat" onclick="HeatUnlock()">Heat<p>10k Mt</p></button>
                     <button id="unlockableCool" onclick="CoolUnlock()">Cool<p>10k Mt</p></button>
                     
+                </div>
+
+                <div class="CrustUpgradesInfo" id="CrustUpgradesInfo">
+
+                    <!-- default info -->
+                    <div id="MainInfoCrustUpgrades">
+                        <h3>Crust Upgrades</h3>
+                        <p>In order to see the information of a Crust Upgrade, move the mouse over it</p>
+                    </div>
+
+                    <!-- Crust Pieces -->
+                    <div id="InfoCP1Upg">
+                        <h4>This is too easy</h4>
+                        <p>To buy this Crust Upgrade you need 10 CP.</p>
+                        <p>Once bought you gain a x2.5 boost to Crust Pieces gained by generators.</p>
+                    </div>
+                    <div id="InfoCP2Upg">
+                        <h4>These are some quite big Boosts</h4>
+                        <p>To buy this Crust Upgrade you need to 100 CP.</p>
+                        <p>Once reached you gain a x5 boost to Crust Pieces gained by generators.</p>
+                    </div>
+                    <!-- Crust Shards -->
+                    <div id="InfoCS1Upg">
+                        <h4>The first Crust Upgrade</h4>
+                        <p>To buy this Crust Upgrade you need 10 CS.</p>
+                        <p>Once bought you gain a x2.5 boost to Crust Shards gained by generators.</p>
+                    </div>
+                    <div id="InfoCS2Upg">
+                        <h4>This do be a good Boost</h4>
+                        <p>To buy this Crust Upgrade you need to 100 CS.</p>
+                        <p>Once reached you gain a x5 boost to Crust Shards gained by generators.</p>
+                    </div>
+                    <!-- Matter -->
+                    <div id="InfoMt1Upg">
+                        <h4>This is new...</h4>
+                        <p>To buy this Crust Upgrade you need 10 Mt.</p>
+                        <p>Once bought you gain a x10 boost to Matter gained by generators.</p>
+                    </div>
+                    <div id="InfoMt2Upg">
+                        <h4>What a huge boost!... But I might need more...</h4>
+                        <p>To buy this Crust Upgrade you need to 100 Mt.</p>
+                        <p>Once reached you gain a x1000 boost to Matter gained by generators.</p>
+                    </div>
+                    <!-- Heat-Cool Unlock -->
+                    <div id="InfoHeatMainUpg">
+                        <h4>Heat???</h4>
+                        <p>To buy this Crust Upgrade you need 1e4 Mt.</p>
+                        <p>Once bought you might unlock a new Feature.</p>
+                    </div>
+                    <div id="InfoCoolMainUpg">
+                        <h4>Cool???</h4>
+                        <p>To buy this Crust Upgrade you need to 1e4 Mt.</p>
+                        <p>Once bought you might unlock a new Feature.</p>
+                    </div>
+
                 </div>
 
             </div>
@@ -116,9 +171,9 @@
                     </div>
 
                     <div class="second-row">
-                        <div id="AchSt1"><span>St #1</span></div>
-                        <div id="AchSt2"><span>St #2</span></div>
-                        <div id="AchSt3"><span>St #3</span></div>
+                        <div id="AchHtClSt1"><span>St #1</span></div>
+                        <div id="AchHtClSt2"><span>St #2</span></div>
+                        <div id="AchHtClSt3"><span>St #3</span></div>
 
                         <div id="AchCM1"><span>CM #1</span></div>
                         <div id="AchCM2"><span>CM #2</span></div>
@@ -133,58 +188,110 @@
                 <div class="Achievements-Info">
 
 
-                    <div id="MainInfo">
+                    <!-- default info -->
+                    <div id="MainInfoAch">
                         <h3>Achievements</h3>
-                        <p>In order to see the information of an Achievement move the mouse over it</p>
+                        <p>In order to see the information of an Achievement, move the mouse over it</p>
                     </div>
 
 
-                    <div id="InfoCS1">
+                    <!-- first row info -->
+                    <div id="InfoCS1Ach">
                         <h4>The first boost</h4>
-                        <p>To unlock this Achievement you need to reach 5 CS.</p>
-                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1000 CS.</p>
+                        <p>Once reached you gain a x2 boost to Crust Shards gained by generators.</p>
                     </div>
-                    <div id="InfoCS2">
+                    <div id="InfoCS2Ach">
                         <h4>The more the Shards, the more the Pieces</h4>
-                        <p>To unlock this Achievement you need to reach 100 CS.</p>
-                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e6 CS.</p>
+                        <p>Once reached you gain a x2 boost to Crust Shards gained by generators.</p>
                     </div>
-                    <div id="InfoCS3">
-                        <h4>Want an ultra boost?</h4>
-                        <p>To unlock this Achievement you need to reach 2000 CS.</p>
-                        <p>Once reached you gain a x2 bonus to Crust Shards gained with generators.</p>
+                    <div id="InfoCS3Ach">
+                        <h4>Another boost?</h4>
+                        <p>To unlock this Achievement you need to reach 1e12 CS.</p>
+                        <p>Once reached you gain a x2 boost to Crust Shards gained by generators.</p>
                     </div>
 
-                    <div id="InfoCP1">
+                    <div id="InfoCP1Ach">
                         <h4>A mix of Shards</h4>
-                        <p>To unlock this Achievement you need to reach 5 CP.</p>
-                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1000 CP.</p>
+                        <p>Once reached you gain a x1.75 boost to Crust Pieces gained by generators.</p>
                     </div>
-                    <div id="InfoCP2">
+                    <div id="InfoCP2Ach">
                         <h4>A new Generator?</h4>
-                        <p>To unlock this Achievement you need to reach 100 CP.</p>
-                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e6 CP.</p>
+                        <p>Once reached you gain a x1.75 boost to Crust Pieces gained by generators.</p>
                     </div>
-                    <div id="InfoCP3">
+                    <div id="InfoCP3Ach">
                         <h4>Need more boosts?</h4>
-                        <p>To unlock this Achievement you need to reach 2000 CP.</p>
-                        <p>Once reached you gain a x1.75 bonus to Crust Pieces gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e12 CP.</p>
+                        <p>Once reached you gain a x1.75 boost to Crust Pieces gained by generators.</p>
                     </div>
 
-                    <div id="InfoMt1">
+                    <div id="InfoMt1Ach">
                         <h4>It's a matter of Matter</h4>
-                        <p>To unlock this Achievement you need to reach 5 Mt.</p>
-                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e6 Mt.</p>
+                        <p>Once reached you gain a x1.5 boost to Matter gained by generators.</p>
                     </div>
-                    <div id="InfoMt2">
+                    <div id="InfoMt2Ach">
                         <h4>Powerful Upgrade for a bad Generator</h4>
-                        <p>To unlock this Achievement you need to reach 100 Mt.</p>
-                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e15 Mt.</p>
+                        <p>Once reached you gain a x1.5 boost to Matter gained by generators.</p>
                     </div>
-                    <div id="InfoMt3">
+                    <div id="InfoMt3Ach">
                         <h4>Heat and Cool, huh?</h4>
-                        <p>To unlock this Achievement you need to reach 2000 Mt.</p>
-                        <p>Once reached you gain a x1.5 bonus to Matter gained with generators.</p>
+                        <p>To unlock this Achievement you need to reach 1e30 Mt.</p>
+                        <p>Once reached you gain a x1.5 boost to Matter gained by generators.</p>
+                    </div>
+
+
+                    <!-- second row info -->
+                    <div id="InfoHtClSt1Ach">
+                        <h4>New features!!!</h4>
+                        <p>To unlock this Achievement you need to reach 100 HtSt and 100 ClSt.</p>
+                        <p>Once reached you gain a x1000 boost to Crust Shards gained by generators.</p>
+                    </div>
+                    <div id="InfoHtClSt2Ach">
+                        <h4>Achievements are getting harder to reach, huh?</h4>
+                        <p>To unlock this Achievement you need to reach 1e5 HtSt and 1e5 ClSt.</p>
+                        <p>Once reached you gain a x1000 boost to Crust Pieces gained by generators.</p>
+                    </div>
+                    <div id="InfoHtClSt3Ach">
+                        <h4>That must take a while</h4>
+                        <p>To unlock this Achievement you need to reach 1e10 HtSt and 1e10 ClSt.</p>
+                        <p>Once reached you gain a x1000 boost to Matter gained by generators.</p>
+                    </div>
+
+                    <div id="InfoCM1Ach">
+                        <h4>That's a lot in no time!</h4>
+                        <p>To unlock this Achievement you need to reach 1e6 CM.</p>
+                        <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
+                    </div>
+                    <div id="InfoCM2Ach">
+                        <h4>How many upgrades are there??</h4>
+                        <p>To unlock this Achievement you need to reach 1e12 CM.</p>
+                        <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
+                    </div>
+                    <div id="InfoCM3Ach">
+                        <h4>Okay this is a lot of Cosmic Microwaves</h4>
+                        <p>To unlock this Achievement you need to reach 1e24 CM.</p>
+                        <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
+                    </div>
+
+                    <div id="InfoPC1Ach">
+                        <h4>It is cold...</h4>
+                        <p>To unlock this Achievement you need to reach 1000 PC.</p>
+                        <p>Once reached you gain a x2 boost to Protostellar Clouds gained by generators.</p>
+                    </div>
+                    <div id="InfoPC2Ach">
+                        <h4>How many do I need?</h4>
+                        <p>To unlock this Achievement you need to reach 1e6 PC.</p>
+                        <p>Once reached you gain a x2 boost to Protostellar Clouds gained by generators.</p>
+                    </div>
+                    <div id="InfoPC3Ach">
+                        <h4>New feature when?</h4>
+                        <p>To unlock this Achievement you need to reach 1e12 PC.</p>
+                        <p>Once reached you gain a x2.5 boost to Protostellar Clouds gained by generators.</p>
                     </div>
 
                 </div>
@@ -195,19 +302,90 @@
                 <h3>Upgrades</h3>
                 <div class="automation">
                     <h2>Automation</h2>
-                    <button class="autoButton">100% CP</button>
-                    <button class="autoButton">100% Mt</button>
-                    <button class="autoButton">10% HtSt</button>
-                    <button class="autoButton">10% ClSt</button>
+                    <button class="autoButton" id="CPConverAutoUpg" onclick="CPConverAuto()">100% CP</button>
+                    <button class="autoButton" id="MtConverAutoUpg" onclick="MtConverAuto()">100% Mt</button>
+                    <button class="autoButton" id="HtStConverAutoUpg" onclick="HtStConverAuto()">10% HtSt</button>
+                    <button class="autoButton" id="ClStConverAutoUpg" onclick="ClStConverAuto()">10% ClSt</button>
                 </div>
-                <div class="permanent">
-                    <h2>Permanent</h2>
-                    <button class="permaButton">CS Boost</button>
-                    <button class="permaButton">CP Boost</button>
-                    <button class="permaButton">Mt Boost</button>
-                    <button class="permaButton">CM Boost</button>
-                    <button class="permaButton">PC Boost</button>
+
+                <div class="boost">
+                    <h2>Boost</h2>
+                    <button class="boostButton" id="CSBoostUpg" onclick="CSBoost()">CS Boost</button>
+                    <button class="boostButton" id="CPBoostUpg" onclick="CPBoost()">CP Boost</button>
+                    <button class="boostButton" id="MtBoostUpg" onclick="MtBoost()">Mt Boost</button>
+                    <button class="boostButton" id="CMBoostUpg" onclick="CMBoost()">CM Boost</button>
+                    <button class="boostButton" id="PCBoostUpg" onclick="PCBoost()">PC Boost</button>
                 </div>
+
+                <div class="GeneralUpgradesInfo" id="GeneralUpgradesInfo">
+
+                    <!-- Default Info -->
+                    <div id="MainInfoGeneralUpgrades">
+                        <h3>General Upgrades</h3>
+                        <p>In order to see the information of a General Upgrade, move the mouse over it</p>
+                    </div>
+
+                    <!-- Automation -->
+                    <!-- Crust Pieces -->
+                    <div id="InfoCPConverAutoUpg">
+                        <h4>Auto CP Convertion</h4>
+                        <p>To buy this Automation Upgrade you need 10 HtSt and ClSt.</p>
+                        <p>Once bought you gain a 100% of Crust Pieces on Convertion per second.</p>
+                    </div>
+                    <!-- Matter -->
+                    <div id="InfoMtConverAutoUpg">
+                        <h4>Auto Mt Convertion</h4>
+                        <p>To buy this Automation Upgrade you need 100 HtSt and ClSt.</p>
+                        <p>Once bought you gain a 100% of Matter on Convertion per second.</p>
+                    </div>
+                    <!-- Heat Stones -->
+                    <div id="InfoHtStConverAutoUpg">
+                        <h4>Auto HtSt Convertion</h4>
+                        <p>To buy this Automation Upgrade you need to 1e3 HtSt and ClSt.</p>
+                        <p>Once bought you gain a 10% of Heat Stones on Convertion per second.</p>
+                    </div>
+                    <!-- Cool Stones -->
+                    <div id="InfoClStConverAutoUpg">
+                        <h4>Auto ClSt Convertion</h4>
+                        <p>To buy this Automation Upgrade you need to 1e3 HtSt and ClSt.</p>
+                        <p>Once bought you gain a 10% of Cool Stones on Convertion per second.</p>
+                    </div>
+
+                    <!-- Boost -->
+                    <!-- Crust Shards -->
+                    <div id="InfoCSBoostUpg">
+                        <h4>CS Boost</h4>
+                        <p>To buy this Boost Upgrade you need 1e10 CM.</p>
+                        <p>Once bought you gain a 1e6 boost to Crust Shards gained by generators.</p>
+                    </div>
+                    <!-- Crust Pieces -->
+                    <div id="InfoCPBoostUpg">
+                        <h4>CP Boost</h4>
+                        <p>To buy this Boost Upgrade you need 1e15 CM.</p>
+                        <p>Once bought you gain a x1e6 boost to Crust Pieces gained by generators.</p>
+                    </div>
+                    <!-- Matter -->
+                    <div id="InfoMtBoostUpg">
+                        <h4>Mt Boost</h4>
+                        <p>To buy this Boost Upgrade you need 1e20 CM.</p>
+                        <p>Once reached you gain a x1e6 boost to Matter gained by generators.</p>
+                    </div>
+                    <!-- Cosmic Microwaves -->
+                    <div id="InfoCMBoostUpg">
+                        <h4>CM Boost</h4>
+                        <p>To buy this Boost Upgrade you need 1e10 PC.</p>
+                        <p>Once reached you gain a x1e6 boost to Cosmic Microwaves gained by generators.</p>
+                    </div>
+                    <!-- Protostellar Clouds -->
+                    <div id="InfoPCBoostUpg">
+                        <h4>PC Boost</h4>
+                        <p>To buy this Crust Upgrade you need to 1e25 CM.</p>
+                        <p>Once reached you gain a x1e6 boost to Protostellar Clouds gained by generators.</p>
+                    </div>
+
+                </div>
+
+                
             </div>
 
             <div class="Heat-Cool" id="Heat-Cool">
@@ -229,11 +407,101 @@
 
                     <div class="HeatUpgrades" id="HeatUpgrades">
                         <h3>Heat Upgrades</h3>
-                        <button id="HeatUpgradeCM1">CM*=Mt/1e6<p>10k CM</p></button>
-                        <button id="HeatUpgradeCM2">CM*=CP/1e3<p>100k CM</p></button>
-                        <button id="HeatUpgradeCM3">CM*=1e3<p>1M CM</p></button>
+                        <div class="first-row">
+                            <button id="HeatUpgradeCM1" onclick="HeatUpgradeCM1()">CM #1<p>1e5 CM</p></button>
+                            <button id="HeatUpgradeCM2" onclick="HeatUpgradeCM2()">CM #2<p>1e5 CM</p></button>
+                            <button id="HeatUpgradeCM3" onclick="HeatUpgradeCM3()">CM #3<p>1e5 CM</p></button>
+                            <button id="HeatUpgradeCM4" onclick="HeatUpgradeCM4()">CM #4<p>1e7 CM</p></button>
+                            <button id="HeatUpgradeCM5" onclick="HeatUpgradeCM5()">CM #5<p>1e7 CM</p></button>
+                            <button id="HeatUpgradeCM6" onclick="HeatUpgradeCM6()">CM #6<p>1e7 CM</p></button>
+                        </div>
 
-                        <button id="CloseHeatUpgrades"><p class="Close">Close</p></button>
+
+                        <div class="second-row">
+                            <button id="HeatUpgradeCM7" onclick="HeatUpgradeCM7()">CM #7<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM8" onclick="HeatUpgradeCM8()">CM #8<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM9" onclick="HeatUpgradeCM9()">CM #9<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM10" onclick="HeatUpgradeCM10()">CM #10<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM11" onclick="HeatUpgradeCM11()">CM #11<p>1e9 CM</p></button>
+                        </div>
+
+                        <div class="third-row">
+                            <button id="HeatUpgradeCM12" onclick="HeatUpgradeCM12()">Elemental Matter</button>
+                        </div>
+
+                        <button id="CloseHeatUpgrades" onclick="CloseHeatUpgrades()"><p class="Close">Close</p></button>
+
+                        <div class="HeatUpgradesInfo">
+                            <div id="MainInfoHeatUpgrades">
+                                <h3>Heat Upgrades</h3>
+                                <p>In order to see the information of a Heat Upgrade, move the mouse over it</p>
+                            </div>
+
+                            <!-- first row -->
+                            <div id="InfoHtCM1">
+                                <h4>CS Multiplier #1</h4>
+                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
+                                <p>Once bought you gain a x10 boost to Crust Shards gained by generators.</p>
+                            </div>
+                            <div id="InfoHtCM2">
+                                <h4>CM Boost with CS</h4>
+                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
+                                <p>Once bought you gain a boost to Cosmic Microwaves based on Crust Shards gained by tiny Big Bangs.</p>
+                            </div>
+                            <div id="InfoHtCM3">
+                                <h4>PC Multiplier #1</h4>
+                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
+                                <p>Once bought you gain a x2 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
+                            </div>
+                            <div id="InfoHtCM4">
+                                <h4>CS Multiplier #2</h4>
+                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
+                                <p>Once bought you gain a x100 boost to Crust Shards gained by generators.</p>
+                            </div>
+                            <div id="InfoHtCM5">
+                                <h4>Matter Boost with PC</h4>
+                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
+                                <p>Once bought you gain a boost to Matter based on Protostellar Clouds gained by generators.</p>
+                            </div>
+                            <div id="InfoHtCM6">
+                                <h4>PC Multiplier #2</h4>
+                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
+                                <p>Once bought you gain a x5 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
+                            </div>
+                            <!-- second row -->
+                            <div id="InfoHtCM7">
+                                <h4>PC Boost with CM</h4>
+                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
+                                <p>Once bought you gain a boost to Protostellar Clouds based on Cosmmic Microwaves gained by Interestellar Clouds.</p>
+                            </div>
+                            <div id="InfoHtCM8">
+                                <h4>CM Multiplier #1</h4>
+                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
+                                <p>Once bought you gain a x1000 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
+                            </div>
+                            <div id="InfoHtCM9">
+                                <h4>HtSt Boost with CM</h4>
+                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
+                                <p>Once bought you gain a boost to Heat Stones based on Cosmic Microwaves gained on Conversion.</p>
+                            </div>
+                            <div id="InfoHtCM10">
+                                <h4>PC Multiplier #3</h4>
+                                <p>To buy this Heat Upgrade you need 1e15 CM.</p>
+                                <p>Once bought you gain x10 boost to Protostellar Clouds based gained by Interestellar Clouds.</p>
+                            </div>
+                            <div id="InfoHtCM11">
+                                <h4>CM Multiplier #2</h4>
+                                <p>To buy this Heat Upgrade you need 1e20 CM.</p>
+                                <p>Once bought you gain x1000 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
+                            </div>
+                            <!-- third row -->
+                            <div id="InfoHtCM12">
+                                <h4>Elemental Matter???</h4>
+                                <p>To buy this Heat Upgrade you need 1e30 CM.</p>
+                                <p>Once bought you might unlock a new tab</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
                 <div class="Cool">
@@ -253,11 +521,99 @@
 
                     <div class="CoolUpgrades" id="CoolUpgrades">
                         <h3>Cool Upgrades</h3>
-                        <button id="CoolUpgradePC1">PC*=Mt/1e6<p>10k CM</p></button>
-                        <button id="CoolUpgradePC2">PC*=CM/1e3<p>100k CM</p></button>
-                        <button id="CoolUpgradePC3">PC*=1e3<p>1M CM</p></button>
+                        <div class="first-row">
+                            <button id="CoolUpgradePC1" onclick="CoolUpgradePC1()">PC #1<p>100 PC</p></button>
+                            <button id="CoolUpgradePC2" onclick="CoolUpgradePC2()">PC #2<p>100 PC</p></button>
+                            <button id="CoolUpgradePC3" onclick="CoolUpgradePC3()">PC #3<p>100 PC</p></button>
+                            <button id="CoolUpgradePC4" onclick="CoolUpgradePC4()">PC #4<p>1e4 PC</p></button>
+                            <button id="CoolUpgradePC5" onclick="CoolUpgradePC5()">PC #5<p>1e4 PC</p></button>
+                            <button id="CoolUpgradePC6" onclick="CoolUpgradePC6()">PC #6<p>1e4 PC</p></button>
+                        </div>
 
-                        <button id="CloseCoolUpgrades"><p class="Close">Close</p></button>
+                        <div class="second-row">
+                            <button id="CoolUpgradePC7" onclick="CoolUpgradePC7()">CM*=1e3log10(PC)<p>1e6 CM</p></button>
+                            <button id="CoolUpgradePC8" onclick="CoolUpgradePC8()">PC*=10<p>1e6 CM</p></button>
+                            <button id="CoolUpgradePC9" onclick="CoolUpgradePC9()">ClSt*=log10(PC)/3<p>1e6 CM</p></button>
+                            <button id="CoolUpgradePC10" onclick="CoolUpgradePC10()">CM*=100<p>1e6 CM</p></button>
+                            <button id="CoolUpgradePC11" onclick="CoolUpgradePC11()">PC*=100<p>1e6 CM</p></button>
+                        </div>
+
+                        <div class="third-row">
+                            <button id="CoolUpgradePC12" onclick="CoolUpgradePC12()">Elemental Matter</button>
+                        </div>
+
+                        <div class="CoolUpgradesInfo">
+                            <div id="MainInfoCoolUpgrades">
+                                <h3>Cool Upgrades</h3>
+                                <p>In order to see the information of a Cool Upgrade, move the mouse over it</p>
+                            </div>
+
+                            <!-- first row -->
+                            <div id="InfoClPC1">
+                                <h4>CP Multiplier #1</h4>
+                                <p>To buy this Cool Upgrade you need 100 PC.</p>
+                                <p>Once bought you gain a x10 boost to Crust Pieces gained by generators.</p>
+                            </div>
+                            <div id="InfoClPC2">
+                                <h4>PC Boost with CP</h4>
+                                <p>To buy this Cool Upgrade you need 100 PC.</p>
+                                <p>Once bought you gain a boost to Protostellar Clouds based on Crust Pieces gained by Interestellar Clouds.</p>
+                            </div>
+                            <div id="InfoClPC3">
+                                <h4>CM Multiplier #1</h4>
+                                <p>To buy this Cool Upgrade you need 100 PC.</p>
+                                <p>Once bought you gain a x10 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
+                            </div>
+                            <div id="InfoClPC4">
+                                <h4>CP Multiplier #2</h4>
+                                <p>To buy this Cool Upgrade you need 1e4 PC.</p>
+                                <p>Once bought you gain a x100 boost to Crust Pieces gained by generators.</p>
+                            </div>
+                            <div id="InfoClPC5">
+                                <h4>Matter Boost with CM</h4>
+                                <p>To buy this Cool Upgrade you need 1e4 PC.</p>
+                                <p>Once bought you gain a boost to Matter based on Cosmic Microwaves gained by generators.</p>
+                            </div>
+                            <div id="InfoClPC6">
+                                <h4>CM Multiplier #2</h4>
+                                <p>To buy this Cool Upgrade you need 1e4 PC.</p>
+                                <p>Once bought you gain a x100 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
+                            </div>
+                            <!-- second row -->
+                            <div id="InfoClPC7">
+                                <h4>CM Boost with PC</h4>
+                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
+                                <p>Once bought you gain a boost to Cosmic Microwaves based on Protostellar Clouds gained by tiny Big Bangs.</p>
+                            </div>
+                            <div id="InfoClPC8">
+                                <h4>PC Multiplier #1</h4>
+                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
+                                <p>Once bought you gain a x10 boost to Protostellas Clouds gained by tiny Big Bangs.</p>
+                            </div>
+                            <div id="InfoClPC9">
+                                <h4>ClSt Boost with PC</h4>
+                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
+                                <p>Once bought you gain a boost to Cool Stones based on Cosmic Microwaves gained on Conversion.</p>
+                            </div>
+                            <div id="InfoClPC10">
+                                <h4>CM Multiplier #3</h4>
+                                <p>To buy this Cool Upgrade you need 1e10 PC.</p>
+                                <p>Once bought you gain a x100 boost to Cosmic Microwaves gained by tiny Big Bangs</p>
+                            </div>
+                            <div id="InfoClPC11">
+                                <h4>PC Multiplier #2</h4>
+                                <p>To buy this Cool Upgrade you need 1e12 PC.</p>
+                                <p>Once bought you gain a x100 boost to Protostellar Clouds gained by Interestellar Clouds</p>
+                            </div>
+                            <!-- third row -->
+                            <div id="InfoClPC12">
+                                <h4>Elemental Matter???</h4>
+                                <p>To buy this Cool Upgrade you need 1e15 PC.</p>
+                                <p>Once bought you might unlock a new tab</p>
+                            </div>
+                        </div>
+
+                        <button id="CloseCoolUpgrades" onclick="CloseCoolUpgrades()"><p class="Close">Close</p></button>
                     </div>
                 </div>
 
@@ -265,6 +621,8 @@
                     <p>Cosmic Microwaves: </p><span id="unitTextCM">0 CM</span>
                     <p>Protostellar Clouds: </p><span id="unitTextPC">0 PC</span>
                 </div>
+
+
 
             </div>
 
