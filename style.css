@@ -30,7 +30,7 @@ body{
     left: 80px;
 }
 #CrustDrillTab{margin-top: 15px;}
-#HeatCoolTab, #UpgradesTab{visibility: hidden;}
+#HeatCoolTab, #UpgradesTab, #ElementalMatterTab, #FireEssenceTab, #WaterEssenceTab, #LightningEssenceTab, #EarthEssenceTab{visibility: hidden;}
 
 .general{
     position: absolute;
@@ -68,10 +68,9 @@ body{
     justify-content: center;
     width: 12.5%;
     height: 150px;
-    
+
     border: solid black;
-    
-    background-color: #8733af;
+
     visibility: hidden;
     
 }
@@ -106,7 +105,7 @@ body{
     top: 0;
     bottom: 0;
 }
-.Achievements, .generalUpgrades, .Heat-Cool{
+.Achievements, .generalUpgrades, .Heat-Cool, .ElementalMatter, .FireEssence, .WaterEssence, .LightningEssence, .EarthEssence{
     visibility: hidden;
     position: absolute;
     left: 0;
@@ -388,7 +387,7 @@ h3{
     height: 150px;
     left: -283px;
     bottom: 400px;
-    background-color: #8733af;
+    background-color: #8643a5;
 }
 
 .Heat{

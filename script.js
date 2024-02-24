@@ -12,6 +12,11 @@ window.setInterval(MainLoop, 100) // Increment/sec
         PC = Protostellar Clouds
         tBB = tiny Big Bang (CM Gen)
         IC = Interestellar Clouds (PC Gen)
+        EM = Elemental Matte
+        FE = Fire Essence
+        WE = Water Essence
+        LE = Lightning Essen
+        EE = Earth Essence
 
         CSsec = CS/sec
 
@@ -42,6 +47,11 @@ let HtSt = 0 // HtSt
 let ClSt = 0 // ClSt
 let CM = 0 // CM
 let PC = 0 // PC
+let EM = 0 // Elemental Matter
+let FE = 0 // Fire Essence
+let WE = 0 // Water Essence
+let LE = 0 // Lightning Essence
+let EE = 0 // Earth Essence
 // Units/sec
 let CSsec = 0 // CS  Formula
 let CPsec = 0 // CP  Formula
@@ -366,47 +376,142 @@ function LoadInfo(LoadInput){
 
 // Tabs Visibility
 let MainInfoCU = document.getElementById("CrustUpgradesInfo")
-let CD = document.getElementById("crustDrill")
-let Upg = document.getElementById("generalUpgrades")
-let Ach = document.getElementById("Achievements")
-let HC = document.getElementById("Heat-Cool")
+let CDTab = document.getElementById("crustDrill")
+let UpgTab = document.getElementById("generalUpgrades")
+let AchTab = document.getElementById("Achievements")
+let HCTab = document.getElementById("Heat-Cool")
 let HeatUpgradesVisibility = document.getElementById("HeatUpgrades")
 let CoolUpgradesVisibility = document.getElementById("CoolUpgrades")
+let EMTab = document.getElementById("ElementalMatter")
+let FETab = document.getElementById("FireEssence")
+let WETab = document.getElementById("WaterEssence")
+let LETab = document.getElementById("LightningEssence")
+let EETab = document.getElementById("EarthEssence")
 function VisibilityCD(){
     MainInfoCU.style.visibility = "inherit"
-    CD.style.visibility = "visible"
-    Upg.style.visibility = "hidden"
-    Ach.style.visibility = "hidden"
-    HC.style.visibility = "hidden"
+    CDTab.style.visibility = "visible"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
     HeatUpgradesVisibility.style.visibility = "hidden"
     CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
 }
 function VisibilityAch(){
     MainInfoCU.style.visibility = "hidden"
-    CD.style.visibility = "hidden"
-    Upg.style.visibility = "hidden"
-    Ach.style.visibility = "visible"
-    HC.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "visible"
+    HCTab.style.visibility = "hidden"
     HeatUpgradesVisibility.style.visibility = "hidden"
     CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
 }
 function VisibilityUpg(){
     MainInfoCU.style.visibility = "hidden"
-    CD.style.visibility = "hidden"
-    Upg.style.visibility = "visible"
-    Ach.style.visibility = "hidden"
-    HC.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "visible"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
     HeatUpgradesVisibility.style.visibility = "hidden"
     CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
 }
 function VisibilityHC(){
     MainInfoCU.style.visibility = "hidden"
-    CD.style.visibility = "hidden"
-    Upg.style.visibility = "hidden"
-    Ach.style.visibility = "hidden"
-    HC.style.visibility = "visible"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "visible"
     HeatUpgradesVisibility.style.visibility = "hidden"
     CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
+}
+function VisibilityEM(){
+    MainInfoCU.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
+    HeatUpgradesVisibility.style.visibility = "hidden"
+    CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "visible"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
+}
+function VisibilityFE(){
+    MainInfoCU.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
+    HeatUpgradesVisibility.style.visibility = "hidden"
+    CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "visible"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
+}
+function VisibilityWE(){
+    MainInfoCU.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
+    HeatUpgradesVisibility.style.visibility = "hidden"
+    CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "visible"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "hidden"
+}
+function VisibilityLE(){
+    MainInfoCU.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
+    HeatUpgradesVisibility.style.visibility = "hidden"
+    CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "visible"
+    EETab.style.visibility = "hidden"
+}
+function VisibilityEE(){
+    MainInfoCU.style.visibility = "hidden"
+    CDTab.style.visibility = "hidden"
+    UpgTab.style.visibility = "hidden"
+    AchTab.style.visibility = "hidden"
+    HCTab.style.visibility = "hidden"
+    HeatUpgradesVisibility.style.visibility = "hidden"
+    CoolUpgradesVisibility.style.visibility = "hidden"
+    EMTab.style.visibility = "hidden"
+    FETab.style.visibility = "hidden"
+    WETab.style.visibility = "hidden"
+    LETab.style.visibility = "hidden"
+    EETab.style.visibility = "visible"
 }
 // Upgrades Visibility
 function VisibilityHeatUpgrades(){
@@ -446,8 +551,8 @@ function ElementalMatterUnlockHt(){
     }
 }
 function ElementalMatterUnlockCl() {
-    if (PC>=1e15){
-        PC -= 1e15
+    if (PC>=1e13){
+        PC -= 1e13
         Unlocked[6] = true
     }
 }
@@ -1249,6 +1354,19 @@ function ColorVisibleShow(){
         HCUnits.style.visibility = "visible"
         HCUnits.style.position = "relative"
         UnitsBox.style.height = "120px"
+    }
+    // Elemental Matter and Essences Tabs
+    let EMButton = document.getElementById("ElementalMatterTab")
+    let FEButton = document.getElementById("FireEssenceTab")
+    let WEButton = document.getElementById("WaterEssenceTab")
+    let LEButton = document.getElementById("LightningEssenceTab")
+    let EEButton = document.getElementById("EarthEssenceTab")
+    if (Unlocked[7]){
+        EMButton.style.visibility = "visible"
+        FEButton.style.visibility = "visible"
+        WEButton.style.visibility = "visible"
+        LEButton.style.visibility = "visible"
+        EEButton.style.visibility = "visible"
     }
 }
 
