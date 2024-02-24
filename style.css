@@ -14,7 +14,7 @@ body{
 
     border: solid black;
 
-    background-color: aliceblue;
+    background-color: #1b0038;
 }
 .tabs button, input{
     width: 80%;
@@ -39,7 +39,7 @@ body{
     bottom: 0;
     width: 89%;    
     border: solid black;
-    background-color: brown;
+    background-color: #101747;
 }
 
 .units{
@@ -56,14 +56,12 @@ body{
 
     border: solid black;
 
-    background-color: aqua;
+    background-color: #3bbff6;
 }
 .SpecifiedUnits #Heat-Cool{
-    
     position: absolute;
     top: 400px;
     left: 40px;
-        
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -73,7 +71,7 @@ body{
     
     border: solid black;
     
-    background-color: palevioletred;
+    background-color: #8733af;
     visibility: hidden;
     
 }
@@ -96,7 +94,7 @@ body{
 
     border: solid black;
 
-    background-color: coral;
+    background-color: #2c3d8e;
     
 }
 
@@ -115,6 +113,9 @@ body{
     right: 0;
     top: 0;
     bottom: 0;
+}
+.Heat-Cool{
+    background: linear-gradient(to right, rgb(255, 60, 0), rgb(0, 140, 255));
 }
 
 h3{
@@ -182,6 +183,51 @@ h3{
     height: 125px;
 }
 
+.CrustUpgradesInfo{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    left: -283px;
+    bottom: 0;
+    background-color: #ad009f;
+}
+.CrustUpgradesInfo h3, .Achievements-Info p{
+    position: relative;
+    bottom: 15px;
+}
+.CrustUpgradesInfo div{
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    background-color: #ad009f;
+    visibility: hidden;
+}
+#MainInfoCrustUpgrades{
+    visibility: inherit;
+}
+
+.GeneralUpgradesInfo{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    left: -283px;
+    bottom: 0;
+    background-color: #ad009f;
+}
+.GeneralUpgradesInfo h3, .Achievements-Info p{
+    position: relative;
+    bottom: 15px;
+}
+.GeneralUpgradesInfo div{
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    background-color: #ad009f;
+    visibility: hidden;
+}
+#MainInfoGeneralUpgrades{
+    visibility: inherit;
+}
 .matter{
     width: 47%;
     height: 40%;
@@ -263,7 +309,7 @@ h3{
     height: 150px;
     left: -283px;
     bottom: 0;
-    background-color: yellowgreen;
+    background-color: #ad009f;
 }
 .Achievements-Info h3, .Achievements-Info p{
     position: relative;
@@ -273,10 +319,10 @@ h3{
     position: absolute;
     width: 250px;
     bottom: 0;
-    background-color: yellowgreen;
+    background-color: #ad009f;
     visibility: hidden;
 }
-#MainInfo{
+#MainInfoAch{
     visibility: inherit;
 }
 .Achievements-Boxes .first-row div{
@@ -287,7 +333,7 @@ h3{
     left: 300px;
 
     font-size: larger;
-    background-color: rgb(255, 103, 103);
+    background-color: rgb(255, 71, 71);
     align-items: center;
     border: solid grey;
 }
@@ -299,7 +345,7 @@ h3{
     left: 300px;
 
     font-size: larger;
-    background-color: rgb(255, 103, 103);
+    background-color: rgb(255, 71, 71);
     align-items: center;
     border: solid grey;
 }
@@ -316,36 +362,33 @@ h3{
     border-radius: 20px;
     margin: 10px 10px;
 }
-.autoButton:hover{
-    background-color: grey;
-}
 
-.permanent{
+.boost{
     position: absolute;
     width: 40%;
     height: 50%;
     right: 0;
     border: solid;
 }
-.permaButton{
+.boostButton{
     width: 75px;
     height: 75px;
     font-size: medium;
     border-radius: 20px;
     margin: 20px 5px;
+    background-color: goldenrod;
 }
-.permaButton:hover{
+.boostButton :hover{
     background-color: goldenrod;
 }
 
 #HeatCoolSpecificUnits{
     position: absolute;
-    
     width: 250px;
     height: 150px;
     left: -283px;
     bottom: 400px;
-    background-color: palevioletred;
+    background-color: #8733af;
 }
 
 .Heat{
@@ -361,7 +404,6 @@ h3{
     height: 90.5%;
     right: 0;
     border: solid;
-    
 }
 #ConvertToHtSt, #ConvertToClSt{
     position: absolute;
@@ -384,7 +426,7 @@ h3{
     left: 200px;
     font-size: medium;
     border-radius: 10px;
-    background-color: burlywood;
+    background-color: #20C9AC;
 }
 .HeatUpgrades{
     position: fixed;
@@ -393,7 +435,7 @@ h3{
     bottom: 80px;
     left: 155px;
     right: -585px;
-    background-color: rosybrown;
+    background-color: #C4203B;
     border: solid;
     z-index: 1;
     visibility: hidden;
@@ -405,19 +447,57 @@ h3{
     bottom: 80px;
     left: -585px;
     right: 155px;
-    background-color: rosybrown;
+    background-color: #4268BD;
     border: solid;
     z-index: 1;
     visibility: hidden;
 }
 .HeatUpgrades button, .CoolUpgrades button{
     border-radius: 10px;
-    padding: 30px;
     margin: 10px 15px;
-    width: 150px;
-    height: 110px;
+    width: 110px;
+    height: 100px;
 }
-#CloseHeatUpgrades{
+.HeatUpgrades .second-row, .CoolUpgrades .second-row{
+    position: relative;
+    top: 50px;
+}
+.HeatUpgrades .third-row, .CoolUpgrades .third-row{
+    position: relative;
+    top: 100px;
+}
+
+#HeatUpgradeCM12, #CoolUpgradePC12{
+    border: solid black;
+    width: 130px;
+    height: 120px;
+    font-size: medium;
+    background-color: rgb(73, 230, 0);
+}
+
+.HeatUpgradesInfo, .CoolUpgradesInfo{
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    left: -440px;
+    bottom: -85px;
+    background-color: #ad009f;
+}
+.HeatUpgradesInfo h3, .CoolUpgradesInfo h3{
+    position: relative;
+    bottom: 15px;
+}
+.HeatUpgradesInfo div, .CoolUpgradesInfo div{
+    position: absolute;
+    width: 250px;
+    bottom: 0;
+    background-color: #ad009f;
+    visibility: hidden;
+}
+#MainInfoHeatUpgrades, #MainInfoCoolUpgrades{
+    visibility: inherit;
+}
+#CloseHeatUpgrades, #CloseCoolUpgrades{
     border-radius: 0;
     padding: 20px;
     width: 100px;
