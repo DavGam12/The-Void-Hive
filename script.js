@@ -143,9 +143,8 @@ let HtCM5Multi = 1 // CM*PC/1e3
 let HtCM6Multi = 1 // PC*5
 let HtCM7Multi = 1 // PC*log10(CM)
 let HtCM8Multi = 1 // CM*1e3
-let HtCM9Multi = 1 // HtSt*log10(CM)
-let HtCM10Multi = 1 // PC*10
-let HtCM11Multi = 1 // CM*1000
+let HtCM9Multi = 1 // PC*10
+let HtCM10Multi = 1 // CM*1000
 // Cool
 let ClPC1Multi = 1 // CPsec*10
 let ClPC2Multi = 1 // PCsec*CP/1e6
@@ -155,9 +154,8 @@ let ClPC5Multi = 1 // PC*CM/1e9
 let ClPC6Multi = 1 // CM*100
 let ClPC7Multi = 1 // CM*1e3log10(PC)
 let ClPC8Multi = 1 // PC*10
-let ClPC9Multi = 1 // ClSt*1e3log10(PC)
-let ClPC10Multi = 1 // CM*100
-let ClPC11Multi = 1 // PC*100
+let ClPC9Multi = 1 // CM*100
+let ClPC10Multi = 1 // PC*100
 
 // Buyables
 let MBCP1Multi = 1 // CP  Formula
@@ -210,10 +208,7 @@ let HeatUpgrades = [
     false, // CM 7
     false, // CM 8
     false, // CM 9
-    false, // CM 10
-    false, // CM 11
-    // third row
-    false // CM 12
+    false // CM 10
 ]
 // Cool
 let CoolUpgrades = [
@@ -228,10 +223,7 @@ let CoolUpgrades = [
     false, // PC 7
     false, // PC 8
     false, // PC 9
-    false, // PC 10
-    false, // PC 11
-    // third row
-    false // PC 12
+    false // PC 10
 ]
 
 // First Prestige Layer
@@ -258,25 +250,29 @@ function HCReset(){
 
 // Unlocks
 let Unlocked = [
-    // Features
     false, // Heat
     false, // Cool
-    // Buttons
+
     false, // Matter Upgrades
     false, // Heat-Cool
-    // Tabs
-    false // Heat-Cool Tab ([0] && [1])
+
+    false, // Heat-Cool Tab ([0] && [1])
+
+    false, // Elemental Matter
+    false, // Elemental Matter
+
+    false // Elemental Matter Tab ([5] && [6])
 ]
 
 // Achievements
 let AchievementsData = [
-    false, false, false,
-    false, false, false,
-    false, false, false,
+    false, false, false, // CS
+    false, false, false, // CP
+    false, false, false, // Mt
 
-    false, false, false,
-    false, false, false,
-    false, false, false
+    false, false, false, // Stones
+    false, false, false, // CM
+    false, false, false // PC
 ]
 let AchMulti = [
     // Crust
@@ -427,6 +423,7 @@ function VisibilityCoolUpgrades(){
 
 // Unlocks
 // Features
+// Heat-Cool
 function HeatUnlock() {
     let UnlockPrice = 1e4
     if (Mt>=UnlockPrice && !Unlocked[0]) {
@@ -441,6 +438,19 @@ function CoolUnlock(){
         Unlocked[1] = true
     }
 }
+// Elemental Matter
+function ElementalMatterUnlockHt(){
+    if (CM>=1e25) {
+        CM -= 1e25
+        Unlocked[5] = true
+    }
+}
+function ElementalMatterUnlockCl() {
+    if (PC>=1e15){
+        PC -= 1e15
+        Unlocked[6] = true
+    }
+}
 // Buttons
 function Unlockables(){
     if (Mt>5){
@@ -453,6 +463,10 @@ function Unlockables(){
 
     if (Unlocked[0] && Unlocked[1]){
         Unlocked[4] = true
+    }
+
+    if (Unlocked[5] && Unlocked[6]) {
+        Unlocked[7] = true
     }
 }
 
@@ -485,49 +499,45 @@ function Upgrades(){
 
     if (HeatUpgrades[0]) {HtCM1Multi = 10} // CS Boost
     else if (!HeatUpgrades[0]) {HtCM1Multi = 1}
-    if (HeatUpgrades[1]) {HtCM2Multi = 1+CS/1e6} // CM Boost
+    if (HeatUpgrades[1] && CS>1) {HtCM2Multi = Math.log10(CS)} // CM Boost
     else if (!HeatUpgrades[1]) {HtCM2Multi = 1}
-    if (HeatUpgrades[2]) {HtCM3Multi = 2} // PC Boost
+    if (HeatUpgrades[2]) {HtCM3Multi = 10} // PC Boost
     else if (!HeatUpgrades[2]) {HtCM3Multi = 1}
-    if (HeatUpgrades[3]) {HtCM4Multi = 100} // CS Boost
+    if (HeatUpgrades[3]) {HtCM4Multi = 100} // CM Boost
     else if (!HeatUpgrades[3]) {HtCM4Multi = 1}
-    if (HeatUpgrades[4]) {HtCM5Multi = 1+Math.log10(CM)} // Mt Boost
+    if (HeatUpgrades[4] && CM>1) {HtCM5Multi = Math.log10(CM)} // Mt Boost
     else if (!HeatUpgrades[4]) {HtCM5Multi = 1}
-    if (HeatUpgrades[5]) {HtCM6Multi = 5} // PC Boost
+    if (HeatUpgrades[5]) {HtCM6Multi = 10} // PC Boost
     else if (!HeatUpgrades[5]) {HtCM6Multi = 1}
-    if (HeatUpgrades[6]) {HtCM7Multi = 1+Math.log10(CM)} // PC Boost
+    if (HeatUpgrades[6] && CM>1) {HtCM7Multi = Math.log10(CM)} // PC Boost
     else if (!HeatUpgrades[6]) {HtCM7Multi = 1}
     if (HeatUpgrades[7]) {HtCM8Multi = 1e3} // CM Boost
     else if (!HeatUpgrades[7]) {HtCM8Multi = 1}
-    if (HeatUpgrades[8]) {HtCM9Multi = 1+Math.log10(CM)/6} // HtSt Boost
-    else if (!HeatUpgrades[8]) {HtCM9Multi = 1}
-    if (HeatUpgrades[9]) {HtCM10Multi = 10} // PC Boost
-    else if (!HeatUpgrades[9]) {HtCM10Multi = 1}
-    if (HeatUpgrades[10]) {HtCM11Multi = 1000} // CM Boost
-    else if (!HeatUpgrades[10]) {HtCM11Multi = 1}
+    if (HeatUpgrades[8]) {HtCM10Multi = 10} // PC Boost
+    else if (!HeatUpgrades[8]) {HtCM10Multi = 1}
+    if (HeatUpgrades[9]) {HtCM11Multi = 1000} // CM Boost
+    else if (!HeatUpgrades[9]) {HtCM11Multi = 1}
 
     if (CoolUpgrades[0]) {ClPC1Multi = 10} // CP Boost
     else if (!CoolUpgrades[0]) {ClPC1Multi = 1}
-    if (CoolUpgrades[1]) {ClPC2Multi = 1+CP/1e6} // PC Boost
+    if (CoolUpgrades[1] && CP>1) {ClPC2Multi = Math.log10(CP)} // PC Boost
     else if (!CoolUpgrades[1]) {ClPC2Multi = 1}
     if (CoolUpgrades[2]) {ClPC3Multi = 10} // CM Boost
     else if (!CoolUpgrades[2]) {ClPC3Multi = 1}
-    if (CoolUpgrades[3]) {ClPC4Multi = 100} // CP Boost
+    if (CoolUpgrades[3]) {ClPC4Multi = 100} // PC Boost
     else if (!CoolUpgrades[3]) {ClPC4Multi = 1}
-    if (CoolUpgrades[4]) {ClPC5Multi = 1+Math.log2(PC)} // Mt Boost
+    if (CoolUpgrades[4] && PC>1) {ClPC5Multi = Math.log2(PC)} // Mt Boost
     else if (!CoolUpgrades[4]) {ClPC5Multi = 1}
     if (CoolUpgrades[5]) {ClPC6Multi = 100} // CM Boost
     else if (!CoolUpgrades[5]) {ClPC6Multi = 1}
-    if (CoolUpgrades[6]) {ClPC7Multi = 1+Math.log2(PC)} // CM Boost
+    if (CoolUpgrades[6] && PC>1) {ClPC7Multi = Math.log2(PC)} // CM Boost
     else if (!CoolUpgrades[6]) {ClPC7Multi = 1}
     if (CoolUpgrades[7]) {ClPC8Multi = 10} // PC Boost
     else if (!CoolUpgrades[7]) {ClPC8Multi = 1}
-    if (CoolUpgrades[8]) {ClPC9Multi = 1+Math.log10(PC)/3} // ClSt Boost
-    else if (!CoolUpgrades[8]) {ClPC9Multi = 1}
-    if (CoolUpgrades[9]) {ClPC10Multi = 100} // CM Boost
-    else if (!CoolUpgrades[9]) {ClPC10Multi = 1}
-    if (CoolUpgrades[10]) {ClPC11Multi = 100} // PC Boost
-    else if (!CoolUpgrades[10]) {ClPC11Multi = 1}
+    if (CoolUpgrades[8]) {ClPC10Multi = 100} // CM Boost
+    else if (!CoolUpgrades[8]) {ClPC10Multi = 1}
+    if (CoolUpgrades[9]) {ClPC11Multi = 10} // PC Boost
+    else if (!CoolUpgrades[9]) {ClPC11Multi = 1}
     
 }
 
@@ -589,28 +599,28 @@ function Achievements() {
         AchievementsData[11] = true
     }
     // CM
-    if (CM>=1e6 || AchievementsData[12]) {
+    if (CM>=1e10 || AchievementsData[12]) {
         AchMulti[12] = 10 // CM Boost
         AchievementsData[12] = true
     }
-    if (CM>=1e12 || AchievementsData[13]) {
+    if (CM>=1e25 || AchievementsData[13]) {
         AchMulti[13] = 10 // CM Boost
         AchievementsData[13] = true
     }
-    if (CM>=1e24 || AchievementsData[14]) {
+    if (CM>=1e50 || AchievementsData[14]) {
         AchMulti[14] = 10 // CM Boost
         AchievementsData[14] = true
     }
     // PC
-    if (PC>=1e3 || AchievementsData[15]) {
+    if (PC>=1e6 || AchievementsData[15]) {
         AchMulti[15] = 2 // PC Boost
         AchievementsData[15] = true
     }
-    if (PC>=1e6 || AchievementsData[16]) {
+    if (PC>=1e15 || AchievementsData[16]) {
         AchMulti[16] = 2 // PC Boost
         AchievementsData[16] = true
     }
-    if (PC>=1e12 || AchievementsData[17]) {
+    if (PC>=1e30 || AchievementsData[17]) {
         AchMulti[17] = 2.5 // PC Boost
         AchievementsData[17] = true
     }
@@ -818,8 +828,8 @@ function Formulas(){
     CPsec = 0.01*CPGenNum
     Mtsec = 0.01*MtGenNum
 
-    if(tBBNum>0){CMsec = 1000**tBBNum}
-    if(ICNum>0){PCsec = 10**ICNum}
+    if(tBBNum>0){CMsec = 10**(3*tBBNum)}
+    if(ICNum>0){PCsec = 10**(ICNum)}
 
     // Generators Prices
     CSGenPrice = 10**CSGenNum
@@ -844,8 +854,8 @@ function Formulas(){
     HtStConverPrice = Math.log10(Mt/1e5)
     ClStConverPrice = Math.log10(Mt/1e5)
 
-    HtStConver = HtStConverPrice*HtCM9Multi
-    ClStConver = ClStConverPrice*ClPC9Multi
+    HtStConver = HtStConverPrice
+    ClStConver = ClStConverPrice
 
     Upgrades()
     Achievements()
@@ -1142,6 +1152,10 @@ function ColorVisibleShow(){
     if (HeatUpgrades[8]) {
         HtCM9.style.backgroundColor = "lightgreen"
     } else if (!HeatUpgrades[8]) {HtCM9.style.backgroundColor = "white"}
+    let HtCM10 = document.getElementById("HeatUpgradeCM10")
+    if (HeatUpgrades[9]) {
+        HtCM10.style.backgroundColor = "lightgreen"
+    } else if (!HeatUpgrades[9]) {HtCM10.style.backgroundColor = "white"}
     // Cool
     let ClPC1 = document.getElementById("CoolUpgradePC1")
     if (CoolUpgrades[0]) {
@@ -1179,6 +1193,11 @@ function ColorVisibleShow(){
     if (CoolUpgrades[8]) {
         ClPC9.style.backgroundColor = "lightgreen"
     } else if (!CoolUpgrades[8]) {ClPC9.style.backgroundColor = "white"}
+    let ClPC10 = document.getElementById("CoolUpgradePC10")
+    if (CoolUpgrades[9]) {
+        ClPC10.style.backgroundColor = "lightgreen"
+    } else if (!CoolUpgrades[9]) {ClPC10.style.backgroundColor = "white"}
+
 
 
     // Unlocks
@@ -1190,6 +1209,19 @@ function ColorVisibleShow(){
     let unlockableCool = document.getElementById("unlockableCool")
     if (Unlocked[1]) {
         unlockableCool.style.backgroundColor = "lightgreen"
+    }
+    // Elemental Matter
+    let unlockableElementalMatterHt = document.getElementById("HeatUpgradeCMEM")
+    if (Unlocked[5]) {
+        unlockableElementalMatterHt.style.backgroundColor = "lightgreen"
+        unlockableElementalMatterHt.style.background = "linear-gradient(to bottom right, red, blue, green,  yellow, brown)"
+        unlockableElementalMatterHt.style.color = "white"
+    }
+    let unlockableElementalMatterCl = document.getElementById("CoolUpgradePCEM")
+    if (Unlocked[6]) {
+        unlockableElementalMatterCl.style.backgroundColor = "lightgreen"
+        unlockableElementalMatterCl.style.background = "linear-gradient(to bottom right, red, blue, green,  yellow, brown)"
+        unlockableElementalMatterCl.style.color = "white"
     }
 
 
@@ -1240,17 +1272,17 @@ function MainLoop(){
     Show()
 }
 function Increment(){
-    CS += (((CSsec)*AchMulti[0]*AchMulti[1]*AchMulti[2]*AchMulti[9])*(cuCS1Multi*cuCS2Multi)*(buCSMulti)*(HtCM1Multi*HtCM4Multi))*MBCS1Multi
+    CS += (((CSsec)*AchMulti[0]*AchMulti[1]*AchMulti[2]*AchMulti[9])*(cuCS1Multi*cuCS2Multi)*(buCSMulti)*(HtCM1Multi))*MBCS1Multi
     if (AutomationUpgrades[0]){CP += CPConver}
-    CP += (((CPsec)*AchMulti[3]*AchMulti[4]*AchMulti[5]*AchMulti[10])*(cuCP1Multi*cuCP2Multi)*(buCPMulti)*(ClPC1Multi*ClPC4Multi))*MBCP1Multi
+    CP += (((CPsec)*AchMulti[3]*AchMulti[4]*AchMulti[5]*AchMulti[10])*(cuCP1Multi*cuCP2Multi)*(buCPMulti)*(ClPC1Multi))*MBCP1Multi
     if (AutomationUpgrades[1]){Mt += MtConver}
     Mt += (((Mtsec)*AchMulti[6]*AchMulti[7]*AchMulti[8]*AchMulti[11])*(cuMt1Multi*cuMt2Multi)*(buMtMulti)*(HtCM5Multi)*(ClPC5Multi))*MBMt1Multi
 
     if (AutomationUpgrades[2]){HtSt += HtStConver*0.1}
     if (AutomationUpgrades[3]){ClSt += ClStConver*0.1}
     
-    CM += (((CMsec)*AchMulti[12]*AchMulti[13]*AchMulti[14])*(buCMMulti)*(HtCM2Multi*HtCM8Multi)*(ClPC3Multi*ClPC6Multi*ClPC7Multi))
-    PC += (((PCsec)*AchMulti[15]*AchMulti[16]*AchMulti[17])*(buPCMulti)*(HtCM3Multi*HtCM6Multi*HtCM7Multi)*(ClPC2Multi*ClPC8Multi))
+    CM += (((CMsec)*AchMulti[12]*AchMulti[13]*AchMulti[14])*(buCMMulti)*(HtCM2Multi*HtCM8Multi*HtCM4Multi*HtCM9Multi)*(ClPC3Multi*ClPC6Multi*ClPC7Multi*ClPC10Multi))
+    PC += (((PCsec)*AchMulti[15]*AchMulti[16]*AchMulti[17])*(buPCMulti)*(HtCM3Multi*HtCM6Multi*HtCM7Multi*HtCM10Multi)*(ClPC2Multi*ClPC8Multi*ClPC4Multi*ClPC9Multi))
 }
 
 // Generators
@@ -1409,59 +1441,66 @@ function PCBoost(){
 // Heat-Cool Upgrades
 // Heat
 function HeatUpgradeCM1(){
-    if (CM>=1e5 && !HeatUpgrades[0]){
-        CM -= 1e5
+    if (CM>=1e4 && !HeatUpgrades[0]){
+        CM -= 1e4
         HeatUpgrades[0] = true
     }
 }
 function HeatUpgradeCM2(){
-    if (CM>=1e5 && !HeatUpgrades[1]){
-        CM -= 1e5
+    if (CM>=1e9 && !HeatUpgrades[1]){
+        CM -= 1e9
         HeatUpgrades[1] = true
     }
 }
 function HeatUpgradeCM3(){
-    if (CM>=1e5 && !HeatUpgrades[2]){
-        CM -= 1e5
+    if (CM>=1e7 && !HeatUpgrades[2]){
+        CM -= 1e7
         HeatUpgrades[2] = true
     }
 }
 function HeatUpgradeCM4(){
-    if (CM>=1e7 && !HeatUpgrades[3]){
-        CM -= 1e7
+    if (CM>=1e5 && !HeatUpgrades[3]){
+        CM -= 1e5
         HeatUpgrades[3] = true
     }
 }
 function HeatUpgradeCM5(){
-    if (CM>=1e7 && !HeatUpgrades[4]){
-        CM -= 1e7
+    if (CM>=1e6 && !HeatUpgrades[4]){
+        CM -= 1e6
         HeatUpgrades[4] = true
     }
 }
 function HeatUpgradeCM6(){
-    if (CM>=1e7 && !HeatUpgrades[5]){
-        CM -= 1e7
+    if (CM>=1e8 && !HeatUpgrades[5]){
+        CM -= 1e8
         HeatUpgrades[5] = true
     }
 }
 function HeatUpgradeCM7(){
-    if (CM>=1e9 && !HeatUpgrades[6]){
-        CM -= 1e9
+    if (CM>=1e14 && !HeatUpgrades[6]){
+        CM -= 1e14
         HeatUpgrades[6] = true
     }
 }
 function HeatUpgradeCM8(){
-    if (CM>=1e9 && !HeatUpgrades[7]){
-        CM -= 1e9
+    if (CM>=1e12 && !HeatUpgrades[7]){
+        CM -= 1e12
         HeatUpgrades[7] = true
     }
 }
 function HeatUpgradeCM9(){
-    if (CM>=1e9 && !HeatUpgrades[8]){
-        CM -= 1e9
+    if (CM>=1e18 && !HeatUpgrades[8]){
+        CM -= 1e18
         HeatUpgrades[8] = true
     }
 }
+function HeatUpgradeCM10(){
+    if (CM>=1e15 && !HeatUpgrades[9]){
+        CM -= 1e15
+        HeatUpgrades[9] = true
+    }
+}
+
 // Cool
 function CoolUpgradePC1(){
     if (PC>=100 && !CoolUpgrades[0]){
@@ -1470,20 +1509,20 @@ function CoolUpgradePC1(){
     }
 }
 function CoolUpgradePC2(){
-    if (PC>=100 && !CoolUpgrades[1]){
-        PC -= 100
+    if (PC>=1e7 && !CoolUpgrades[1]){
+        PC -= 1e7
         CoolUpgrades[1] = true
     }
 }
 function CoolUpgradePC3(){
-    if (PC>=100 && !CoolUpgrades[2]){
-        PC -= 100
+    if (PC>=1e5 && !CoolUpgrades[2]){
+        PC -= 1e5
         CoolUpgrades[2] = true
     }
 }
 function CoolUpgradePC4(){
-    if (PC>=1e4 && !CoolUpgrades[3]){
-        PC -= 1e4
+    if (PC>=1000 && !CoolUpgrades[3]){
+        PC -= 1000
         CoolUpgrades[3] = true
     }
 }
@@ -1494,29 +1533,36 @@ function CoolUpgradePC5(){
     }
 }
 function CoolUpgradePC6(){
-    if (PC>=1e4 && !CoolUpgrades[5]){
-        PC -= 1e4
+    if (PC>=1e6 && !CoolUpgrades[5]){
+        PC -= 1e6
         CoolUpgrades[5] = true
     }
 }
 function CoolUpgradePC7(){
-    if (PC>=1e6 && !CoolUpgrades[6]){
-        PC -= 1e6
+    if (PC>=1e9 && !CoolUpgrades[6]){
+        PC -= 1e9
         CoolUpgrades[6] = true
     }
 }
 function CoolUpgradePC8(){
-    if (PC>=1e6 && !CoolUpgrades[7]){
-        PC -= 1e6
+    if (PC>=1e8 && !CoolUpgrades[7]){
+        PC -= 1e8
         CoolUpgrades[7] = true
     }
 }
 function CoolUpgradePC9(){
-    if (PC>=1e6 && !CoolUpgrades[8]){
-        PC -= 1e6
+    if (PC>=1e10 && !CoolUpgrades[8]){
+        PC -= 1e10
         CoolUpgrades[8] = true
     }
 }
+function CoolUpgradePC10(){
+    if (PC>=1e11 && !CoolUpgrades[9]){
+        PC -= 1e11
+        CoolUpgrades[9] = true
+    }
+}
+
 // Info
 function UpgradesInfo(){
     // Crust Upgrades
@@ -1800,24 +1846,14 @@ function UpgradesInfo(){
         HtCM10Info.style.visibility = "hidden"
         MainInfoHtU.style.visibility = "inherit"
     })
-    let HtCM11 = document.getElementById("HeatUpgradeCM11")
-    let HtCM11Info = document.getElementById("InfoHtCM11")
-    HtCM11.addEventListener("mouseover", function (){
-        HtCM11Info.style.visibility = "visible"
+    let HtCMEM = document.getElementById("HeatUpgradeCMEM")
+    let HtCMEMInfo = document.getElementById("InfoHtCMEM")
+    HtCMEM.addEventListener("mouseover", function (){
+        HtCMEMInfo.style.visibility = "visible"
         MainInfoHtU.style.visibility = "hidden"
     })
-    HtCM11.addEventListener("mouseout", function (){
-        HtCM11Info.style.visibility = "hidden"
-        MainInfoHtU.style.visibility = "inherit"
-    })
-    let HtCM12 = document.getElementById("HeatUpgradeCM12")
-    let HtCM12Info = document.getElementById("InfoHtCM12")
-    HtCM12.addEventListener("mouseover", function (){
-        HtCM12Info.style.visibility = "visible"
-        MainInfoHtU.style.visibility = "hidden"
-    })
-    HtCM12.addEventListener("mouseout", function (){
-        HtCM12Info.style.visibility = "hidden"
+    HtCMEM.addEventListener("mouseout", function (){
+        HtCMEMInfo.style.visibility = "hidden"
         MainInfoHtU.style.visibility = "inherit"
     })
 
@@ -1923,24 +1959,14 @@ function UpgradesInfo(){
         ClPC10Info.style.visibility = "hidden"
         MainInfoClU.style.visibility = "inherit"
     })
-    let ClPC11 = document.getElementById("CoolUpgradePC11")
-    let ClPC11Info = document.getElementById("InfoClPC11")
-    ClPC11.addEventListener("mouseover", function (){
-        ClPC11Info.style.visibility = "visible"
+    let ClPCEM = document.getElementById("CoolUpgradePCEM")
+    let ClPCEMInfo = document.getElementById("InfoClPCEM")
+    ClPCEM.addEventListener("mouseover", function (){
+        ClPCEMInfo.style.visibility = "visible"
         MainInfoClU.style.visibility = "hidden"
     })
-    ClPC11.addEventListener("mouseout", function (){
-        ClPC11Info.style.visibility = "hidden"
-        MainInfoClU.style.visibility = "inherit"
-    })
-    let ClPC12 = document.getElementById("CoolUpgradePC12")
-    let ClPC12Info = document.getElementById("InfoClPC12")
-    ClPC12.addEventListener("mouseover", function (){
-        ClPC12Info.style.visibility = "visible"
-        MainInfoClU.style.visibility = "hidden"
-    })
-    ClPC12.addEventListener("mouseout", function (){
-        ClPC12Info.style.visibility = "hidden"
+    ClPCEM.addEventListener("mouseout", function (){
+        ClPCEMInfo.style.visibility = "hidden"
         MainInfoClU.style.visibility = "inherit"
     })
 }

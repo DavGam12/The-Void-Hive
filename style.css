@@ -333,7 +333,7 @@ h3{
     left: 300px;
 
     font-size: larger;
-    background-color: rgb(255, 103, 103);
+    background-color: rgb(255, 71, 71);
     align-items: center;
     border: solid grey;
 }
@@ -345,7 +345,7 @@ h3{
     left: 300px;
 
     font-size: larger;
-    background-color: rgb(255, 103, 103);
+    background-color: rgb(255, 71, 71);
     align-items: center;
     border: solid grey;
 }
@@ -376,6 +376,7 @@ h3{
     font-size: medium;
     border-radius: 20px;
     margin: 20px 5px;
+    background-color: goldenrod;
 }
 .boostButton :hover{
     background-color: goldenrod;
@@ -471,7 +472,7 @@ h3{
     width: 130px;
     height: 120px;
     font-size: medium;
-    background-color: rgb(47, 255, 127);
+    background-color: rgb(73, 230, 0);
 }
 
 .HeatUpgradesInfo, .CoolUpgradesInfo{

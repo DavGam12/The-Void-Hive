@@ -16,6 +16,7 @@
         
         <input type="file" id="LoadInput" hidden onchange="LoadInfo(this)">
         <button id="Save" onclick="Save()">Save</button><button id="Load" onclick="Load()">Load</button>
+
         <button id="CrustDrillTab" onclick="VisibilityCD()">Crust Drill</button>
         <button id="AchievementsTab" onclick="VisibilityAch()">Achievement</button>
         <button id="UpgradesTab" onclick="VisibilityUpg()">Upgrades</button>
@@ -264,33 +265,33 @@
 
                     <div id="InfoCM1Ach">
                         <h4>That's a lot in no time!</h4>
-                        <p>To unlock this Achievement you need to reach 1e6 CM.</p>
+                        <p>To unlock this Achievement you need to reach 1e10 CM.</p>
                         <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
                     </div>
                     <div id="InfoCM2Ach">
                         <h4>How many upgrades are there??</h4>
-                        <p>To unlock this Achievement you need to reach 1e12 CM.</p>
+                        <p>To unlock this Achievement you need to reach 1e25 CM.</p>
                         <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
                     </div>
                     <div id="InfoCM3Ach">
                         <h4>Okay this is a lot of Cosmic Microwaves</h4>
-                        <p>To unlock this Achievement you need to reach 1e24 CM.</p>
+                        <p>To unlock this Achievement you need to reach 1e50 CM.</p>
                         <p>Once reached you gain a x10 boost to Cosmic Microwaves gained by generators.</p>
                     </div>
 
                     <div id="InfoPC1Ach">
                         <h4>It is cold...</h4>
-                        <p>To unlock this Achievement you need to reach 1000 PC.</p>
+                        <p>To unlock this Achievement you need to reach 1e6 PC.</p>
                         <p>Once reached you gain a x2 boost to Protostellar Clouds gained by generators.</p>
                     </div>
                     <div id="InfoPC2Ach">
                         <h4>How many do I need?</h4>
-                        <p>To unlock this Achievement you need to reach 1e6 PC.</p>
+                        <p>To unlock this Achievement you need to reach 1e15 PC.</p>
                         <p>Once reached you gain a x2 boost to Protostellar Clouds gained by generators.</p>
                     </div>
                     <div id="InfoPC3Ach">
                         <h4>New feature when?</h4>
-                        <p>To unlock this Achievement you need to reach 1e12 PC.</p>
+                        <p>To unlock this Achievement you need to reach 1e30 PC.</p>
                         <p>Once reached you gain a x2.5 boost to Protostellar Clouds gained by generators.</p>
                     </div>
 
@@ -408,25 +409,24 @@
                     <div class="HeatUpgrades" id="HeatUpgrades">
                         <h3>Heat Upgrades</h3>
                         <div class="first-row">
-                            <button id="HeatUpgradeCM1" onclick="HeatUpgradeCM1()">CM #1<p>1e5 CM</p></button>
-                            <button id="HeatUpgradeCM2" onclick="HeatUpgradeCM2()">CM #2<p>1e5 CM</p></button>
-                            <button id="HeatUpgradeCM3" onclick="HeatUpgradeCM3()">CM #3<p>1e5 CM</p></button>
-                            <button id="HeatUpgradeCM4" onclick="HeatUpgradeCM4()">CM #4<p>1e7 CM</p></button>
-                            <button id="HeatUpgradeCM5" onclick="HeatUpgradeCM5()">CM #5<p>1e7 CM</p></button>
-                            <button id="HeatUpgradeCM6" onclick="HeatUpgradeCM6()">CM #6<p>1e7 CM</p></button>
+                            <button id="HeatUpgradeCM1" onclick="HeatUpgradeCM1()">CM #1<p>1e4 CM</p></button>
+                            <button id="HeatUpgradeCM2" onclick="HeatUpgradeCM2()">CM #2<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM3" onclick="HeatUpgradeCM3()">CM #3<p>1e7 CM</p></button>
+                            <button id="HeatUpgradeCM4" onclick="HeatUpgradeCM4()">CM #4<p>1e5 CM</p></button>
+                            <button id="HeatUpgradeCM5" onclick="HeatUpgradeCM5()">CM #5<p>1e6 CM</p></button>
+                            <button id="HeatUpgradeCM6" onclick="HeatUpgradeCM6()">CM #6<p>1e8 CM</p></button>
                         </div>
 
 
                         <div class="second-row">
-                            <button id="HeatUpgradeCM7" onclick="HeatUpgradeCM7()">CM #7<p>1e9 CM</p></button>
-                            <button id="HeatUpgradeCM8" onclick="HeatUpgradeCM8()">CM #8<p>1e9 CM</p></button>
-                            <button id="HeatUpgradeCM9" onclick="HeatUpgradeCM9()">CM #9<p>1e9 CM</p></button>
-                            <button id="HeatUpgradeCM10" onclick="HeatUpgradeCM10()">CM #10<p>1e9 CM</p></button>
-                            <button id="HeatUpgradeCM11" onclick="HeatUpgradeCM11()">CM #11<p>1e9 CM</p></button>
+                            <button id="HeatUpgradeCM7" onclick="HeatUpgradeCM7()">CM #7<p>1e14 CM</p></button>
+                            <button id="HeatUpgradeCM8" onclick="HeatUpgradeCM8()">CM #8<p>1e12 CM</p></button>
+                            <button id="HeatUpgradeCM9" onclick="HeatUpgradeCM9()">CM #10<p>1e15 CM</p></button>
+                            <button id="HeatUpgradeCM10" onclick="HeatUpgradeCM10()">CM #11<p>1e20 CM</p></button>
                         </div>
 
                         <div class="third-row">
-                            <button id="HeatUpgradeCM12" onclick="HeatUpgradeCM12()">Elemental Matter</button>
+                            <button id="HeatUpgradeCMEM" onclick="ElementalMatterUnlockHt()">Elemental Matter</button>
                         </div>
 
                         <button id="CloseHeatUpgrades" onclick="CloseHeatUpgrades()"><p class="Close">Close</p></button>
@@ -440,64 +440,59 @@
                             <!-- first row -->
                             <div id="InfoHtCM1">
                                 <h4>CS Multiplier #1</h4>
-                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
+                                <p>To buy this Heat Upgrade you need 1e4 CM.</p>
                                 <p>Once bought you gain a x10 boost to Crust Shards gained by generators.</p>
                             </div>
                             <div id="InfoHtCM2">
                                 <h4>CM Boost with CS</h4>
-                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
-                                <p>Once bought you gain a boost to Cosmic Microwaves based on Crust Shards gained by tiny Big Bangs.</p>
+                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
+                                <p>Once bought you gain a boost to Cosmic Microwaves gained by tiny Big Bangs based on Crust Shards.</p>
                             </div>
                             <div id="InfoHtCM3">
                                 <h4>PC Multiplier #1</h4>
-                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
-                                <p>Once bought you gain a x2 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
+                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
+                                <p>Once bought you gain a x10 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
                             </div>
                             <div id="InfoHtCM4">
-                                <h4>CS Multiplier #2</h4>
-                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
-                                <p>Once bought you gain a x100 boost to Crust Shards gained by generators.</p>
+                                <h4>CM Multiplier #1</h4>
+                                <p>To buy this Heat Upgrade you need 1e5 CM.</p>
+                                <p>Once bought you gain a x100 boost to Cosmic Microwaves gained by generators.</p>
                             </div>
                             <div id="InfoHtCM5">
                                 <h4>Matter Boost with PC</h4>
-                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
-                                <p>Once bought you gain a boost to Matter based on Protostellar Clouds gained by generators.</p>
+                                <p>To buy this Heat Upgrade you need 1e6 CM.</p>
+                                <p>Once bought you gain a boost to Matter gained by generators based on Protostellar Clouds.</p>
                             </div>
                             <div id="InfoHtCM6">
                                 <h4>PC Multiplier #2</h4>
-                                <p>To buy this Heat Upgrade you need 1e7 CM.</p>
-                                <p>Once bought you gain a x5 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
+                                <p>To buy this Heat Upgrade you need 1e8 CM.</p>
+                                <p>Once bought you gain a x10 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
                             </div>
                             <!-- second row -->
                             <div id="InfoHtCM7">
                                 <h4>PC Boost with CM</h4>
-                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
-                                <p>Once bought you gain a boost to Protostellar Clouds based on Cosmmic Microwaves gained by Interestellar Clouds.</p>
+                                <p>To buy this Heat Upgrade you need 1e14 CM.</p>
+                                <p>Once bought you gain a boost to Protostellar Clouds gained by Interestellar Clouds based on Cosmmic Microwaves.</p>
                             </div>
                             <div id="InfoHtCM8">
-                                <h4>CM Multiplier #1</h4>
-                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
+                                <h4>CM Multiplier #2</h4>
+                                <p>To buy this Heat Upgrade you need 1e12 CM.</p>
                                 <p>Once bought you gain a x1000 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
                             </div>
                             <div id="InfoHtCM9">
-                                <h4>HtSt Boost with CM</h4>
-                                <p>To buy this Heat Upgrade you need 1e9 CM.</p>
-                                <p>Once bought you gain a boost to Heat Stones based on Cosmic Microwaves gained on Conversion.</p>
-                            </div>
-                            <div id="InfoHtCM10">
                                 <h4>PC Multiplier #3</h4>
                                 <p>To buy this Heat Upgrade you need 1e15 CM.</p>
                                 <p>Once bought you gain x10 boost to Protostellar Clouds based gained by Interestellar Clouds.</p>
                             </div>
-                            <div id="InfoHtCM11">
-                                <h4>CM Multiplier #2</h4>
+                            <div id="InfoHtCM10">
+                                <h4>CM Multiplier #3</h4>
                                 <p>To buy this Heat Upgrade you need 1e20 CM.</p>
                                 <p>Once bought you gain x1000 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
                             </div>
                             <!-- third row -->
-                            <div id="InfoHtCM12">
+                            <div id="InfoHtCMEM">
                                 <h4>Elemental Matter???</h4>
-                                <p>To buy this Heat Upgrade you need 1e30 CM.</p>
+                                <p>To buy this Heat Upgrade you need 1e25 CM.</p>
                                 <p>Once bought you might unlock a new tab</p>
                             </div>
                         </div>
@@ -523,23 +518,22 @@
                         <h3>Cool Upgrades</h3>
                         <div class="first-row">
                             <button id="CoolUpgradePC1" onclick="CoolUpgradePC1()">PC #1<p>100 PC</p></button>
-                            <button id="CoolUpgradePC2" onclick="CoolUpgradePC2()">PC #2<p>100 PC</p></button>
-                            <button id="CoolUpgradePC3" onclick="CoolUpgradePC3()">PC #3<p>100 PC</p></button>
-                            <button id="CoolUpgradePC4" onclick="CoolUpgradePC4()">PC #4<p>1e4 PC</p></button>
+                            <button id="CoolUpgradePC2" onclick="CoolUpgradePC2()">PC #2<p>1e7 PC</p></button>
+                            <button id="CoolUpgradePC3" onclick="CoolUpgradePC3()">PC #3<p>1e5 PC</p></button>
+                            <button id="CoolUpgradePC4" onclick="CoolUpgradePC4()">PC #4<p>1000 PC</p></button>
                             <button id="CoolUpgradePC5" onclick="CoolUpgradePC5()">PC #5<p>1e4 PC</p></button>
-                            <button id="CoolUpgradePC6" onclick="CoolUpgradePC6()">PC #6<p>1e4 PC</p></button>
+                            <button id="CoolUpgradePC6" onclick="CoolUpgradePC6()">PC #6<p>1e6 PC</p></button>
                         </div>
 
                         <div class="second-row">
-                            <button id="CoolUpgradePC7" onclick="CoolUpgradePC7()">PC #7<p>1e6 CM</p></button>
-                            <button id="CoolUpgradePC8" onclick="CoolUpgradePC8()">PC #8<p>1e6 CM</p></button>
-                            <button id="CoolUpgradePC9" onclick="CoolUpgradePC9()">PC #9<p>1e6 CM</p></button>
-                            <button id="CoolUpgradePC10" onclick="CoolUpgradePC10()">PC #10<p>1e6 CM</p></button>
-                            <button id="CoolUpgradePC11" onclick="CoolUpgradePC11()">PC #11<p>1e6 CM</p></button>
+                            <button id="CoolUpgradePC7" onclick="CoolUpgradePC7()">PC #7<p>1e9 PC</p></button>
+                            <button id="CoolUpgradePC8" onclick="CoolUpgradePC8()">PC #8<p>1e8 PC</p></button>
+                            <button id="CoolUpgradePC9" onclick="CoolUpgradePC9()">PC #10<p>1e10 PC</p></button>
+                            <button id="CoolUpgradePC10" onclick="CoolUpgradePC10()">PC #11<p>1e11 PC</p></button>
                         </div>
 
                         <div class="third-row">
-                            <button id="CoolUpgradePC12" onclick="CoolUpgradePC12()">Elemental Matter</button>
+                            <button id="CoolUpgradePCEM" onclick="ElementalMatterUnlockCl()">Elemental Matter</button>
                         </div>
 
                         <div class="CoolUpgradesInfo">
@@ -556,57 +550,52 @@
                             </div>
                             <div id="InfoClPC2">
                                 <h4>PC Boost with CP</h4>
-                                <p>To buy this Cool Upgrade you need 100 PC.</p>
-                                <p>Once bought you gain a boost to Protostellar Clouds based on Crust Pieces gained by Interestellar Clouds.</p>
+                                <p>To buy this Cool Upgrade you need 1e7 PC.</p>
+                                <p>Once bought you gain a boost to Protostellar Clouds gained by Interestellar Clouds based on Crust Piece.</p>
                             </div>
                             <div id="InfoClPC3">
                                 <h4>CM Multiplier #1</h4>
-                                <p>To buy this Cool Upgrade you need 100 PC.</p>
+                                <p>To buy this Cool Upgrade you need 1e5 PC.</p>
                                 <p>Once bought you gain a x10 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
                             </div>
                             <div id="InfoClPC4">
-                                <h4>CP Multiplier #2</h4>
-                                <p>To buy this Cool Upgrade you need 1e4 PC.</p>
-                                <p>Once bought you gain a x100 boost to Crust Pieces gained by generators.</p>
+                                <h4>PC Multiplier #1</h4>
+                                <p>To buy this Cool Upgrade you need 1000 PC.</p>
+                                <p>Once bought you gain a x100 boost to Protostellar Clouds gained by Interestellar Clouds.</p>
                             </div>
                             <div id="InfoClPC5">
                                 <h4>Matter Boost with CM</h4>
                                 <p>To buy this Cool Upgrade you need 1e4 PC.</p>
-                                <p>Once bought you gain a boost to Matter based on Cosmic Microwaves gained by generators.</p>
+                                <p>Once bought you gain a boost to Matter gained by generators based on Cosmic Microwaves.</p>
                             </div>
                             <div id="InfoClPC6">
                                 <h4>CM Multiplier #2</h4>
-                                <p>To buy this Cool Upgrade you need 1e4 PC.</p>
+                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
                                 <p>Once bought you gain a x100 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
                             </div>
                             <!-- second row -->
                             <div id="InfoClPC7">
                                 <h4>CM Boost with PC</h4>
-                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
-                                <p>Once bought you gain a boost to Cosmic Microwaves based on Protostellar Clouds gained by tiny Big Bangs.</p>
+                                <p>To buy this Cool Upgrade you need 1e10 PC.</p>
+                                <p>Once bought you gain a boost to Cosmic Microwaves gained by tiny Big Bangs based on Protostellar Clouds.</p>
                             </div>
                             <div id="InfoClPC8">
-                                <h4>PC Multiplier #1</h4>
-                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
+                                <h4>PC Multiplier #2</h4>
+                                <p>To buy this Cool Upgrade you need 1e9 PC.</p>
                                 <p>Once bought you gain a x10 boost to Protostellas Clouds gained by tiny Big Bangs.</p>
                             </div>
                             <div id="InfoClPC9">
-                                <h4>ClSt Boost with PC</h4>
-                                <p>To buy this Cool Upgrade you need 1e6 PC.</p>
-                                <p>Once bought you gain a boost to Cool Stones based on Cosmic Microwaves gained on Conversion.</p>
-                            </div>
-                            <div id="InfoClPC10">
                                 <h4>CM Multiplier #3</h4>
-                                <p>To buy this Cool Upgrade you need 1e10 PC.</p>
+                                <p>To buy this Cool Upgrade you need 1e11 PC.</p>
                                 <p>Once bought you gain a x100 boost to Cosmic Microwaves gained by tiny Big Bangs</p>
                             </div>
-                            <div id="InfoClPC11">
-                                <h4>PC Multiplier #2</h4>
-                                <p>To buy this Cool Upgrade you need 1e12 PC.</p>
-                                <p>Once bought you gain a x100 boost to Protostellar Clouds gained by Interestellar Clouds</p>
+                            <div id="InfoClPC10">
+                                <h4>PC Multiplier #3</h4>
+                                <p>To buy this Cool Upgrade you need 1e13 PC.</p>
+                                <p>Once bought you gain a x10 boost to Protostellar Clouds gained by Interestellar Clouds</p>
                             </div>
                             <!-- third row -->
-                            <div id="InfoClPC12">
+                            <div id="InfoClPCEM">
                                 <h4>Elemental Matter???</h4>
                                 <p>To buy this Cool Upgrade you need 1e15 PC.</p>
                                 <p>Once bought you might unlock a new tab</p>
@@ -625,6 +614,8 @@
 
 
             </div>
+
+            <div class="ElementalMatter"></div>
 
         </div>
     </div>
