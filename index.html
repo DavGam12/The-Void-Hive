@@ -426,8 +426,8 @@
                         <div class="second-row">
                             <button id="HeatUpgradeCM7" onclick="HeatUpgradeCM7()">CM #7<p>1e14 CM</p></button>
                             <button id="HeatUpgradeCM8" onclick="HeatUpgradeCM8()">CM #8<p>1e12 CM</p></button>
-                            <button id="HeatUpgradeCM9" onclick="HeatUpgradeCM9()">CM #10<p>1e15 CM</p></button>
-                            <button id="HeatUpgradeCM10" onclick="HeatUpgradeCM10()">CM #11<p>1e20 CM</p></button>
+                            <button id="HeatUpgradeCM9" onclick="HeatUpgradeCM9()">CM #9<p>1e15 CM</p></button>
+                            <button id="HeatUpgradeCM10" onclick="HeatUpgradeCM10()">CM #10<p>1e20 CM</p></button>
                         </div>
 
                         <div class="third-row">
@@ -491,13 +491,13 @@
                             </div>
                             <div id="InfoHtCM10">
                                 <h4>CM Multiplier #3</h4>
-                                <p>To buy this Heat Upgrade you need 1e20 CM.</p>
+                                <p>To buy this Heat Upgrade you need 1e16 CM.</p>
                                 <p>Once bought you gain x1000 boost to Cosmic Microwaves gained by tiny Big Bangs.</p>
                             </div>
                             <!-- third row -->
                             <div id="InfoHtCMEM">
                                 <h4>Elemental Matter???</h4>
-                                <p>To buy this Heat Upgrade you need 1e25 CM.</p>
+                                <p>To buy this Heat Upgrade you need 1e19 CM.</p>
                                 <p>Once bought you might unlock a new tab</p>
                             </div>
                         </div>
@@ -533,8 +533,8 @@
                         <div class="second-row">
                             <button id="CoolUpgradePC7" onclick="CoolUpgradePC7()">PC #7<p>1e9 PC</p></button>
                             <button id="CoolUpgradePC8" onclick="CoolUpgradePC8()">PC #8<p>1e8 PC</p></button>
-                            <button id="CoolUpgradePC9" onclick="CoolUpgradePC9()">PC #10<p>1e10 PC</p></button>
-                            <button id="CoolUpgradePC10" onclick="CoolUpgradePC10()">PC #11<p>1e11 PC</p></button>
+                            <button id="CoolUpgradePC9" onclick="CoolUpgradePC9()">PC #9<p>1e10 PC</p></button>
+                            <button id="CoolUpgradePC10" onclick="CoolUpgradePC10()">PC #10<p>1e11 PC</p></button>
                         </div>
 
                         <div class="third-row">
@@ -620,30 +620,77 @@
 
             </div>
 
+            <!-- main -->
             <div class="ElementalMatter" id="ElementalMatter">
                 <h3>Elemental Matter</h3>
-            </div>
-            <!-- main -->
+                <!-- first row -->
+                <div class="first-row">
+                    <button id="ElementalMatterConvertion">Combine CM and PC into
+                    <br><span id="ConvertToEMUnitText">0.0</span> EM</button>
+                </div>
+                <!-- second row -->
+                <div class="second-row">
+                    <button id="FireEssenceUnlock">Unlock Fire Essence<p>1 EM</p></button>
+                    <button id="WaterEssenceUnlock">Unlock Water Essence<p>1 EM</p></button>
+                    <button id="LightningEssenceUnlock">Unlock Lightning Essence<p>1 EM</p></button>
+                    <button id="EarthEssenceUnlock">Unlock Earth Essence<p>1 EM</p></button>
+                </div>
 
+                <div class="SpecifiedUnits" id="ElementalSpecificUnits">
+                    <p>Fire Essence: <span id="unitTextFE">0 FE</span></p>
+                    <p>Water Essence: <span id="unitTextWE">0 WE</span></p>
+                    <p>Lightning Essence: <span id="unitTextLE">0 WE</span></p>
+                    <p>Earth Essence: <span id="unitTextEE">0 WE</span></p>
+                </div>
+            </div>
+
+            <!-- Heat Boost -->
             <div class="FireEssence" id="FireEssence">
                 <h3>Fire Essence</h3>
-            </div>
-            <!-- Heat Boost -->
 
+                <div class="SpecifiedUnits" id="ElementalSpecificUnits">
+                    <p>Fire Essence: <span id="unitTextFE">0 FE</span></p>
+                    <p>Water Essence: <span id="unitTextWE">0 WE</span></p>
+                    <p>Lightning Essence: <span id="unitTextLE">0 WE</span></p>
+                    <p>Earth Essence: <span id="unitTextEE">0 WE</span></p>
+                </div>
+            </div>
+
+            <!-- Cool Boost -->
             <div class="WaterEssence" id="WaterEssence">
                 <h3>Water Essence</h3>
-            </div>
-            <!-- Cool Boost -->
 
+                <div class="SpecifiedUnits" id="ElementalSpecificUnits">
+                    <p>Fire Essence: <span id="unitTextFE">0 FE</span></p>
+                    <p>Water Essence: <span id="unitTextWE">0 WE</span></p>
+                    <p>Lightning Essence: <span id="unitTextLE">0 WE</span></p>
+                    <p>Earth Essence: <span id="unitTextEE">0 WE</span></p>
+                </div>
+            </div>
+
+            <!-- Pieces && Shards Boost -->
             <div class="LightningEssence" id="LightningEssence">
                 <h3>Lightning Essence</h3>
-            </div>
-            <!-- Pieces && Shards Boost -->
 
+                <div class="SpecifiedUnits" id="ElementalSpecificUnits">
+                    <p>Fire Essence: <span id="unitTextFE">0 FE</span></p>
+                    <p>Water Essence: <span id="unitTextWE">0 WE</span></p>
+                    <p>Lightning Essence: <span id="unitTextLE">0 WE</span></p>
+                    <p>Earth Essence: <span id="unitTextEE">0 WE</span></p>
+                </div>
+            </div>
+
+            <!-- Matter Boost -->
             <div class="EarthEssence" id="EarthEssence">
                 <h3>Earth Essence</h3>
+
+                <div class="SpecifiedUnits" id="ElementalSpecificUnits">
+                    <p>Fire Essence: <span id="unitTextFE">0 FE</span></p>
+                    <p>Water Essence: <span id="unitTextWE">0 WE</span></p>
+                    <p>Lightning Essence: <span id="unitTextLE">0 WE</span></p>
+                    <p>Earth Essence: <span id="unitTextEE">0 WE</span></p>
+                </div>
             </div>
-            <!-- Matter Boost -->
 
         </div>
     </div>

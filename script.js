@@ -1,5 +1,6 @@
 window.setInterval(MainLoop, 100) // Increment/sec
 
+
 /*
     Abbreviations->{
         CS = Crust Shards
@@ -58,11 +59,16 @@ let CPsec = 0 // CP  Formula
 let Mtsec = 0 // Mt  Formula
 let CMsec = 0 // CM Formula
 let PCsec = 0 // PC Formula
+let FEsec = 0 // FE Formula
+let WEsec = 0 // WE Formula
+let LEsec = 0 // LE Formula
+let EEsec = 0 // EE Formula
 // Units/Convertion
 let CPConver = 0 // CP  Formula
 let MtConver = 0 // Mt  Formula
 let HtStConver = 0 // HtSt Formula
 let ClStConver = 0 // ClSt Formula
+let EMConver = 0 // EM Formuña
 // Convertion Price
 let HtStConverPrice
 let ClStConverPrice
@@ -85,6 +91,7 @@ let ConvertToCPUnitText
 let ConvertToMtUnitText
 let ConvertToHtStUnitText
 let ConvertToClStUnitText
+let ConvertToEMUnitText
 let MBCP1PriceText
 let MBMt1PriceText
 let MBCS1PriceText
@@ -108,6 +115,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         ConvertToMtUnitText = document.getElementById("convertToMtUnitText")
         ConvertToHtStUnitText = document.getElementById("ConvertToHtStUnitText")
         ConvertToClStUnitText = document.getElementById("ConvertToClStUnitText")
+        ConvertToEMUnitText = document.getElementById("ConvertToEMUnitText")
         MBCP1PriceText = document.getElementById("MBCP1PriceText")
         MBMt1PriceText = document.getElementById("MBMt1PriceText")
         MBCS1PriceText = document.getElementById("MBCS1PriceText")
@@ -545,8 +553,8 @@ function CoolUnlock(){
 }
 // Elemental Matter
 function ElementalMatterUnlockHt(){
-    if (CM>=1e25) {
-        CM -= 1e25
+    if (CM>=1e19) {
+        CM -= 1e19
         Unlocked[5] = true
     }
 }
@@ -618,10 +626,10 @@ function Upgrades(){
     else if (!HeatUpgrades[6]) {HtCM7Multi = 1}
     if (HeatUpgrades[7]) {HtCM8Multi = 1e3} // CM Boost
     else if (!HeatUpgrades[7]) {HtCM8Multi = 1}
-    if (HeatUpgrades[8]) {HtCM10Multi = 10} // PC Boost
-    else if (!HeatUpgrades[8]) {HtCM10Multi = 1}
-    if (HeatUpgrades[9]) {HtCM11Multi = 1000} // CM Boost
-    else if (!HeatUpgrades[9]) {HtCM11Multi = 1}
+    if (HeatUpgrades[8]) {HtCM9Multi = 10} // PC Boost
+    else if (!HeatUpgrades[8]) {HtCM9Multi = 1}
+    if (HeatUpgrades[9]) {HtCM10Multi = 1000} // CM Boost
+    else if (!HeatUpgrades[9]) {HtCM10Multi = 1}
 
     if (CoolUpgrades[0]) {ClPC1Multi = 10} // CP Boost
     else if (!CoolUpgrades[0]) {ClPC1Multi = 1}
@@ -639,10 +647,10 @@ function Upgrades(){
     else if (!CoolUpgrades[6]) {ClPC7Multi = 1}
     if (CoolUpgrades[7]) {ClPC8Multi = 10} // PC Boost
     else if (!CoolUpgrades[7]) {ClPC8Multi = 1}
-    if (CoolUpgrades[8]) {ClPC10Multi = 100} // CM Boost
-    else if (!CoolUpgrades[8]) {ClPC10Multi = 1}
-    if (CoolUpgrades[9]) {ClPC11Multi = 10} // PC Boost
-    else if (!CoolUpgrades[9]) {ClPC11Multi = 1}
+    if (CoolUpgrades[8]) {ClPC9Multi = 100} // CM Boost
+    else if (!CoolUpgrades[8]) {ClPC9Multi = 1}
+    if (CoolUpgrades[9]) {ClPC10Multi = 10} // PC Boost
+    else if (!CoolUpgrades[9]) {ClPC10Multi = 1}
     
 }
 
@@ -1026,12 +1034,20 @@ function Show(){
     if (ClStConver>=1e3){
         if (ClStConver>0) {
             ConvertToClStUnitText.innerHTML = ClStConver.toExponential(1)
-        }
-        else ConvertToClStUnitText.innerHTML = 0
+        } else ConvertToClStUnitText.innerHTML = 0
     } else {
         if (ClStConver>0) {
         ConvertToClStUnitText.innerHTML = ClStConver.toFixed(1)
         } else ConvertToClStUnitText.innerHTML = 0
+    }
+    if (EMConver>=1e3) {
+        if (EMConver>0){
+            ConvertToEMUnitText.innerHTML = EMConver.toExponential(1)
+        } else ConvertToEMUnitText.innerHTML = 0
+    } else {
+        if (EMConver>0){
+            ConvertToEMUnitText.innerHTML = EMConver.toFixed(1)
+        } else ConvertToEMUnitText.innerHTML = 0
     }
     // Buyables Prices
     if (MBCP1Price>=1e3){
@@ -1318,13 +1334,11 @@ function ColorVisibleShow(){
     // Elemental Matter
     let unlockableElementalMatterHt = document.getElementById("HeatUpgradeCMEM")
     if (Unlocked[5]) {
-        unlockableElementalMatterHt.style.backgroundColor = "lightgreen"
         unlockableElementalMatterHt.style.background = "linear-gradient(to bottom right, red, blue, green,  yellow, brown)"
         unlockableElementalMatterHt.style.color = "white"
     }
     let unlockableElementalMatterCl = document.getElementById("CoolUpgradePCEM")
     if (Unlocked[6]) {
-        unlockableElementalMatterCl.style.backgroundColor = "lightgreen"
         unlockableElementalMatterCl.style.background = "linear-gradient(to bottom right, red, blue, green,  yellow, brown)"
         unlockableElementalMatterCl.style.color = "white"
     }
@@ -1607,14 +1621,14 @@ function HeatUpgradeCM8(){
     }
 }
 function HeatUpgradeCM9(){
-    if (CM>=1e18 && !HeatUpgrades[8]){
-        CM -= 1e18
+    if (CM>=1e15 && !HeatUpgrades[8]){
+        CM -= 1e15
         HeatUpgrades[8] = true
     }
 }
 function HeatUpgradeCM10(){
-    if (CM>=1e15 && !HeatUpgrades[9]){
-        CM -= 1e15
+    if (CM>=1e16 && !HeatUpgrades[9]){
+        CM -= 1e16
         HeatUpgrades[9] = true
     }
 }
